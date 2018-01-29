@@ -1,0 +1,260 @@
+<?php
+/**
+ * The template part for displaying an custom header thumbnail
+ *
+ * @package WordPress
+ * @subpackage petstore
+ * @since petstore 1.0
+ */
+?>
+<div class="custom-header">
+
+<div class="header-pattern"></div>
+
+    <?php 
+
+        // If the current page is a static page or post
+        if ( is_page() || is_single() ) {
+
+        if ( has_post_thumbnail() ) {
+
+         the_post_thumbnail( 'header-image', array( 'alt' => the_title_attribute( 'echo=0' ), 'class' => "custom-header-image" ) ); 
+
+        } else {  
+            $image = get_template_directory_uri() .'/assets/img/header_placeholder.png'; 
+            $alt = get_bloginfo( 'description' );
+            echo '<img src="'.$image.'" alt="'.$alt.'" />';
+        }
+
+    // If the current page is the posts index page
+    } else if ( is_home() ) {
+
+        $image = get_template_directory_uri() .'/assets/img/header_placeholder.png'; 
+        $alt = get_bloginfo( 'description' );
+        echo '<img src="'.$image.'" alt="'.$alt.'" />';
+
+    // If the current page is the 404, archive or search results page (pulls in header image set on blog index)
+    } else if ( is_404() || is_archive() || is_search() ) {
+
+        $image = get_template_directory_uri() .'/assets/img/header_placeholder.png'; 
+        $alt = get_bloginfo( 'description' );
+        echo '<img src="'.$image.'" alt="'.$alt.'" />';
+       
+    } ?>
+
+    <?php if ( is_page() ) { ?>
+
+    <div class="custom-headings">
+
+        <div class="custom-headings-inner">
+
+            <?php if ( get_post_meta( $post->ID, 'petstore_page_heading', true ) ) { ?>
+
+            <h1 class="page-title"><span class="entry-title"><?php echo get_post_meta($post->ID, 'petstore_page_heading', true) ?></span></h1>
+
+            <?php } else { ?>
+
+            <h1 class="page-title"><span class="entry-title"><?php the_title(); ?></span></h1>
+            <?php } ?>
+
+            <h2 class="page-subtitle"><?php echo get_post_meta($post->ID, 'petstore_page_subtitle', true) ?></h2>
+            
+        </div>
+        
+    </div><!-- end .custom-headings -->
+
+    <?php } elseif ( is_front_page() || is_home() ) { ?>
+
+    <?php
+    $page_id = ( 'page' == get_option( 'show_on_front' ) ? get_option( 'page_for_posts' ) : get_the_ID );
+    ?>
+
+    <div class="custom-headings">
+
+        <div class="custom-headings-inner">
+
+            <?php if ( get_post_meta( $page_id, 'petstore_page_heading', true ) ) { ?>
+
+            <h1 class="page-title"><span class="entry-title"><?php echo get_post_meta( $page_id, 'petstore_page_heading', true ); ?></span></h1>
+            
+            <?php } else { ?>
+
+            <h1 class="page-title"><span class="entry-title"><?php echo get_the_title( get_option('page_for_posts', true) ); ?></span></h1>
+          
+            <?php } ?>
+
+            <h2 class="page-subtitle"><?php echo get_post_meta($post->ID, 'petstore_page_subtitle', true) ?></h2>
+
+        </div>
+
+    </div><!-- end .custom-headings -->
+
+    <?php } elseif ( class_exists( 'WooCommerce' ) && is_woocommerce() && is_shop() ) { ?>
+
+    <div class="custom-headings">
+
+        <div class="custom-headings-inner"> 
+
+        <?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+
+            <h1 class="page-title"><span class="entry-title"><?php woocommerce_page_title(); ?></span></h1>
+
+        <?php endif; ?>
+
+        </div>
+        
+    </div><!-- end .custom-headings -->
+
+    <?php } elseif ( class_exists( 'WooCommerce' ) && is_product_category() ) { ?>
+
+    <div class="custom-headings">
+
+        <div class="custom-headings-inner"> 
+
+        <?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+
+            <h1 class="page-title">Product Category: <span class="entry-title"><?php woocommerce_page_title(); ?></span></h1>
+
+        <?php endif; ?>
+
+        </div>
+        
+    </div><!-- end .custom-headings -->
+
+    <?php } elseif ( class_exists( 'WooCommerce' ) && is_product() ) { ?>
+
+    <div class="custom-headings">
+
+        <div class="custom-headings-inner"> 
+
+            <h1 class="page-title"><span class="entry-title"><?php the_title(); ?></span></h1>
+
+        </div>
+        
+    </div><!-- end .custom-headings -->
+
+    <?php } elseif ( is_single() ) { ?>
+
+    <div class="custom-headings">
+
+        <div class="custom-headings-inner">
+
+            <h1 class="page-title"><span class="entry-title"><?php the_title(); ?></span></h1>
+
+
+            <?php
+            global $post;
+            $author_id=$post->post_author;
+            $username = get_userdata( $post->post_author );
+            ?>
+
+            <h2 class="page-subtitle"><span class="byline"><?php _e( 'Article by', 'petstore' ); ?> <span class="author vcard"><a class="url fn n" href="<?php echo get_author_posts_url( $post->post_author ); ?>"><?php echo $username->display_name; ?></a></span> on <span><span class="entry-date published updated"><?php the_time( 'F j, Y' ); ?></span></span></span></h2>
+
+        </div>
+        
+    </div><!-- end .custom-headings -->
+
+    <?php } elseif ( is_category() ) { ?>
+
+    <div class="custom-headings">
+
+        <div class="custom-headings-inner">
+
+            <h1 class="page-title"><span class="entry-title"><?php _e( 'Posts in Category: ', 'petstore' ); ?><?php single_cat_title(); ?></span></h1>
+
+        </div>
+
+    </div><!-- end .custom-headings -->
+
+    <?php } elseif ( is_author() ) { ?>
+
+    <div class="custom-headings">
+
+        <div class="custom-headings-inner">
+
+            <?php if ( 'post' === get_post_type() ) {
+            $author_avatar_size = apply_filters( 'petstore_author_avatar_size', 80 );
+                echo get_avatar( get_the_author_meta( 'ID' ), $author_avatar_size ); 
+            } ?>
+
+            <h1 class="page-title"><span class="entry-title"><?php _e( 'Posts by: ', 'petstore' ); ?><?php echo get_the_author(); ?></span></h1>
+
+        </div>
+
+    </div><!-- end .custom-headings -->
+
+    <?php } elseif ( is_404() ) { ?>
+
+    <div class="custom-headings">
+
+        <div class="custom-headings-inner">
+
+            <h1 class="page-title"><span class="entry-title"><?php _e( '404 - Page not found', 'petstore' ); ?></span></h1>
+           
+        </div>
+
+    </div><!-- end .custom-headings -->
+
+    <?php } elseif ( is_tag() ) { ?>
+
+    <div class="custom-headings">
+
+        <div class="custom-headings-inner">
+
+            <h1 class="page-title"><span class="entry-title"><?php _e( 'Posts Tagged with: ', 'petstore' ); ?><?php single_tag_title(); ?></span></h1>
+
+        </div>
+
+    </div><!-- end .custom-headings -->
+
+    <?php } elseif ( is_search() ) { ?>
+
+    <div class="custom-headings">
+
+        <div class="custom-headings-inner">
+
+            <h1 class="page-title entry-title"><span class="entry-title"><?php _e('Search Results For: ', 'petstore');?><?php the_search_query() ?></span></h1>
+
+        </div>
+
+    </div><!-- end .custom-headings -->
+
+    <?php } elseif ( is_day() ) { ?>
+
+    <div class="custom-headings">
+
+        <div class="custom-headings-inner">
+
+            <h1 class="page-title"><span class="entry-title"><?php _e( 'Daily Archives:', 'petstore' ); ?><span class="updated"><?php the_time( 'F jS, Y' ); ?></span></span></h1>
+
+        </div>
+
+    </div><!-- end .custom-headings -->
+
+    <?php } elseif ( is_month() ) { ?>
+
+    <div class="custom-headings">
+
+        <div class="custom-headings-inner">
+
+            <h1 class="page-title"><span class="entry-title"><?php _e( 'Monthly Archives:', 'petstore' ); ?><?php single_month_title( ' ', 'petstore' ); ?> <span class="updated"><?php the_time( 'F, Y' ); ?></span></span></h1>
+
+        </div>
+
+    </div><!-- end .custom-headings -->
+
+    <?php } elseif ( is_year() ) { ?>
+
+    <div class="custom-headings">
+
+        <div class="custom-headings-inner">
+
+            <h1 class="page-title"><span class="entry-title"><?php _e( 'Yearly Archives:', 'petstore' ); ?><span class="updated"><?php the_time( 'Y' ); ?></span></span></h1>
+
+        </div>
+        
+    </div><!-- end .custom-headings -->
+   
+    <?php }?>
+
+</div><!-- end .custom-header -->
