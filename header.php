@@ -10,161 +10,88 @@
  */
 
 ?>
-<?php get_template_part( 'template-parts/head', 'meta' ); ?>
+<!doctype html>
+<html  lang="en"<?php //language_attributes(); ?>>
+<head>
+	<meta charset="utf-8<?php //bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<?php //wp_head(); ?>
+    <script src="https://use.fortawesome.com/a789a9d9.js"></script>
+</head>
 
-    <body <?php body_class(); ?> >
-    
-    <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'petstore' ); ?></a>
+<body <?php //body_class(); ?>>
+<div id="page" class="site">
+	<!-- <a class="skip-link screen-reader-text" href="#content"><?php //esc_html_e( 'Skip to content', 'petfirst' ); ?></a> -->
 
-        <header id="masthead" class="header-global">
+	<header id="masthead" class="site-header">
 
-            <?php if ( is_active_sidebar( 'topbar-left' ) || is_active_sidebar( 'topbar-right' ) )  : ?>
+    <!-- top dark bar -->
+    <div class="top-nav">
+      <div class="top-nav-inner flex-row">
+        <nav>
+					<ul>
+	          <li><a class="" href="tel:18552707387" title="">855.270.7387</a></li>
+	          <li><a class="" href="#" title="">Contact Us</a></li>
+	          <li><a class="" href="#" title="">Partnerships</a></li>
+	          <li><a class="" href="#" title="">About Us</a></li>
+	          <li><a class="" href="#" title="">MyPets Login</a></li>
+					</ul>
+        </nav>
+        <a class="search" href="#" title=""><i class="fa fa-search"></i></a>
+      </div>
+    </div>
 
-            <div id="petstore-topbar">
-                
-                <div class="grid">
+    <!-- main header bar -->
 
-                    <div class="row">
+		<div class="main-nav">
+      <div class="main-nav-inner flex-row">
 
-                        <div class="c6">
+				<div class="mobile-contact-buttons">
+					<a href="tel:18552707387"><i class="fa fa-phone"></i></a>
+					<a href="#"><i class="fa fa-home"></i></a>
+				</div>
 
-                            <div class="topbar-left">
+        <div class="site-branding">
 
-                                <?php dynamic_sidebar( 'topbar-left' ); ?>
+    			<?php
+    			// the_custom_logo();
+    			// if ( is_front_page() && is_home() ) : ?>
+    				<!-- <h1 class="site-title">-->
+            <a class="logo" href="#<?php //echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="images/logo-temporary.png" alt="Pet first logo"><?php //bloginfo( 'name' ); ?></a>
+          <!--</h1> -->
+    			<?php //else : ?>
+    				<!-- <p class="site-title"><a href="#<?php //echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="logo" alt="Pet first logo"><?php //bloginfo( 'name' ); ?></a></p> -->
+    			<?php
+    			//endif;
 
-                            </div>
-                            
-                        </div>
+    			//$description = get_bloginfo( 'description', 'display' );
+    			//if ( $description || is_customize_preview() ) : ?>
+    				<!-- <p class="site-description"><?php //echo $description; /* WPCS: xss ok. */ ?></p> -->
+    			<?php
+    			//endif; ?>
+    		</div><!-- .site-branding -->
 
-                        <div class="c6">
+        <div class="nav-side flex-row">
+      		<nav id="site-navigation" class="standard-nav main-navigation">
+            <a class="" href="#">Pet Insurance</a>
+            <a class="" href="#">Customer Support</a>
+            <a class="" href="#">Resources</a>
+            <a class="" href="#">Blog</a>
+      			<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php //esc_html_e( 'Primary Menu', 'petfirst' ); ?></button> -->
+      			<?php
+      				// wp_nav_menu( array(
+      				// 	'theme_location' => 'menu-1',
+      				// 	'menu_id'        => 'primary-menu',
+      				// ) );
+      			?>
+      		</nav><!-- #site-navigation -->
+          <a class="btn-lg btn-primary quote-btn-lg" style="display:none;" href="#"> Get a Free Quote</a>
+					<a class="btn-lg btn-primary quote-btn-md" style="display:none;" href="#"> Get Free Quote</a>
+					<a class="btn-sm btn-primary quote-btn-sm" style="display:none;" href="#"> Get Quote</a>
+        </div>
+      </div>
+    </div>
+	</header><!-- #masthead -->
 
-                            <div class="topbar-right">
-                                
-                                <?php dynamic_sidebar( 'topbar-right' ); ?>
-
-                            </div>
-                            
-                        </div>
-
-                    </div><!-- end .row -->
-
-                </div><!-- end .grid -->
-
-            </div><!-- end #petstore-topbar -->
-
-            <?php endif; ?>
-
-                <?php if ( get_header_image() ) : ?>
-
-                <?php
-                    /**
-                     * Filter the default petstore custom header sizes attribute.
-                     *
-                     * @since petstore 1.0
-                     *
-                     * @param string $custom_header_sizes sizes attribute
-                     * for Custom Header. Default '(max-width: 709px) 85vw,
-                     * (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px'.
-                     */
-                    $custom_header_sizes = apply_filters( 'petstore_custom_header_sizes', '(max-width: 709px) 85vw, (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px' );
-                ?>
-
-            <div class="header-top" style="background:url('<?php header_image(); ?>')">
-
-        <?php else : ?>
-
-            <div class="header-top">
-                        
-            <?php endif; // End header image check. ?>
-
-                <div class="grid">
-
-                    <div class="row">
-                        
-                        <div class="c3">
-                        
-                            <div class="logo">
-
-                                <?php petstore_the_custom_logo(); ?>
-
-                                <?php if ( display_header_text() ) {
-       
-                                if ( is_front_page() && is_home() ) : ?>
-                                 
-                                    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                                
-                                    <?php else : ?>
-                                       
-                                        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                                    
-                                    <?php endif;
-
-                                    $description = get_bloginfo( 'description', 'display' );
-                                    
-                                    if ( $description || is_customize_preview() ) : ?>
-                                        <p class="site-description"><?php echo $description; ?></p>
-                                    
-                                    <?php endif; 
-
-                                } ?>
-
-                            </div><!-- end .logo -->
-
-                        </div><!-- end .c3 -->
-                            
-                            <div class="c9">
-                        
-                                <div class="site-header-main">
-
-                                    <?php if ( has_nav_menu( 'primary' ) ) : ?>
-                                    
-                                    <button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'petstore' ); ?></button>
-
-                                    <div id="site-header-menu" class="site-header-menu">
-                                    
-                                        <nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'petstore' ); ?>">
-
-                                            <?php
-                                                wp_nav_menu( array(
-                                                    'theme_location' => 'primary',
-                                                    'menu_class'     => 'primary-menu',
-                                                 ) );
-                                            ?>
-
-                                        </nav><!-- .main-navigation -->
-
-                                    </div><!-- .site-header-menu -->
-
-                                    <?php endif; ?><!-- end has_nav_menu -->
-
-                                </div><!-- end .site-header-main -->
-
-                            </div><!-- end .c12 -->
-
-                        </div><!-- end .row -->
-
-                    </div><!-- end .grid -->
-
-                </div><!-- end .main-navigation-row -->
-
-            </div><!-- end .header-top -->
-
-            </div><!-- for interior pages -->
-            
-            <?php if ( !is_front_page() ) : ?><!-- if an interior page -->
-
-            <div class="grid wfull">
-
-                <div class="row">
-                
-                    <?php get_template_part( 'template-parts/custom', 'header' ); ?>               
-
-                </div><!-- end .row -->
-
-            </div><!-- end .grid -->
-
-            <?php endif; ?>
-
-        </header><!-- end .header-global -->
-       
-        <main class="page-content">
+	<div id="content" class="site-content">
