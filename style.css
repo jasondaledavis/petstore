@@ -4,7 +4,7 @@ Theme URI: https://molecule.element502.com
 Author: Blackstone Media
 Author URI: http://blackstonemedia.com
 Description: none.
-Version: 1.0
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -865,7 +865,7 @@ input[type="search"].search-field {
 /**
  * 6.1 - Links
  */
-
+/*
 a, a:visited {
     -webkit-transition: all .3s ease-in-out 0s;
     -moz-transition: all .3s ease-in-out 0s;
@@ -886,11 +886,11 @@ a:focus {
 a:hover,
 a:active {
     outline: 0;
-}
+}*/
 /**
  * 6.2 - Menus
  */
-
+/*
 .site-header-menu.toggled-on,
 .no-js .site-header-menu {
     display: block;
@@ -926,9 +926,9 @@ a:active {
 .main-navigation .current-menu-item>a,
 .main-navigation .current-menu-ancestor>a {
     font-weight: normal;
-}
+}*/
 /*hover effect*/
-
+/*
 .main-navigation a::before {
     background: #cecece none repeat scroll 0 0;
     bottom: 0;
@@ -968,7 +968,7 @@ a:active {
 }
 .main-navigation .menu-item-has-children>a {
     margin-right: 56px;
-}
+}*/
 .dropdown-toggle {
     display: none !important;
 }
@@ -1741,7 +1741,7 @@ blockquote:after,
     box-shadow: 0px 1px 8px rgba(2, 2, 2, 0.2);
     background: #ffffff;
 }
-.header-top-dark .main-navigation,
+/*.header-top-dark .main-navigation,
 .header-top .main-navigation {
     padding: 10px 0;
 }
@@ -1760,7 +1760,7 @@ blockquote:after,
 .header-top-dark .main-navigation .primary-menu,
 .header-top-dark .main-navigation .primary-menu>li {
     border: 0;
-}
+}*/
 /*for when logged into wordpress to move admin bar out of the way*/
 
 .admin-bar .header-top,
@@ -3002,7 +3002,7 @@ p>video {
         -ms-flex: 0 1 auto;
         flex: 0 1 auto;
     }
-    .main-navigation {
+   /* .main-navigation {
         margin: 0 -0.875em;
     }
     .main-navigation .primary-menu,
@@ -3096,7 +3096,7 @@ p>video {
     .main-navigation ul .dropdown-toggle.toggled-on,
     .menu-toggle {
         display: none;
-    }
+    }*/
     .widget {
         font-size: 10px;
         line-height: 22px;

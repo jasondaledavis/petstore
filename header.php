@@ -16,11 +16,11 @@
 	<meta charset="utf-8<?php //bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<?php //wp_head(); ?>
+	<?php wp_head(); ?>
     <script src="https://use.fortawesome.com/a789a9d9.js"></script>
 </head>
 
-<body <?php //body_class(); ?>>
+<body <?php body_class(); ?>>
 <div id="page" class="site">
 	<!-- <a class="skip-link screen-reader-text" href="#content"><?php //esc_html_e( 'Skip to content', 'petfirst' ); ?></a> -->
 
@@ -58,7 +58,7 @@
     			// the_custom_logo();
     			// if ( is_front_page() && is_home() ) : ?>
     				<!-- <h1 class="site-title">-->
-            <a class="logo" href="#<?php //echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="images/logo-temporary.png" alt="Pet first logo"><?php //bloginfo( 'name' ); ?></a>
+            <a class="logo" href="#<?php //echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri();?>/images/logo-temporary.png" alt="Pet first logo"><?php //bloginfo( 'name' ); ?></a>
           <!--</h1> -->
     			<?php //else : ?>
     				<!-- <p class="site-title"><a href="#<?php //echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="logo" alt="Pet first logo"><?php //bloginfo( 'name' ); ?></a></p> -->

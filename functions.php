@@ -376,7 +376,7 @@ function petstore_scripts() {
   // wp_enqueue_style( 'petstore-gutes', get_template_directory_uri() . '/assets/css/gutes.css');
 
   // Gutenberg stylesheet.
-  // wp_enqueue_style( 'petstore-main', get_template_directory_uri() . '/assets/css/main.css');
+  wp_enqueue_style( 'petstore-main', get_template_directory_uri() . '/main.css');
 
   // Add custom fonts, used in the main stylesheet.
   wp_enqueue_style( 'petstore-fonts', petstore_fonts_url(), array(), null );
