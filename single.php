@@ -3,8 +3,8 @@
  * The template for displaying all single posts and attachments
  *
  * @package WordPress
- * @subpackage petstore
- * @since petstore 1.0
+ * @subpackage petfirst
+ * @since petfirst 1.0
  */
 
 get_header(); ?>
@@ -44,16 +44,16 @@ get_header(); ?>
                     if ( is_singular( 'attachment' ) ) {
                         // Parent post navigation.
                         the_post_navigation( array(
-                            'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'petstore' ),
+                            'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'petfirst' ),
                         ) );
                     } elseif ( is_singular( 'post' ) ) {
                         // Previous/next post navigation.
                         the_post_navigation( array(
-                            'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'petstore' ) . '</span> ' .
-                                '<span class="screen-reader-text">' . __( 'Previous post:', 'petstore' ) . '</span> ' .
+                            'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'petfirst' ) . '</span> ' .
+                                '<span class="screen-reader-text">' . __( 'Previous post:', 'petfirst' ) . '</span> ' .
                                 '<span class="post-title">%title</span>',
-                            'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'petstore' ) . '</span> ' .
-                                '<span class="screen-reader-text">' . __( 'Next post:', 'petstore' ) . '</span> ' .
+                            'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'petfirst' ) . '</span> ' .
+                                '<span class="screen-reader-text">' . __( 'Next post:', 'petfirst' ) . '</span> ' .
                                 '<span class="post-title">%title</span>',
                         ) );
                     }

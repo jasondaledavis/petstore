@@ -5,8 +5,8 @@
  * Displays all of the head element and everything up until the "page-content" div.
  *
  * @package WordPress
- * @subpackage petstore
- * @since petstore 1.0
+ * @subpackage petfirst
+ * @since petfirst 1.0
  */
 
 ?>

@@ -3,8 +3,8 @@
  * The template for the footer widget areas on posts and pages
  *
  * @package WordPress
- * @subpackage petstore
- * @since petstore 1.0
+ * @subpackage petfirst
+ * @since petfirst 1.0
  */
 ?>
 

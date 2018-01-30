@@ -3,8 +3,8 @@
  * The template part for displaying an Head Meta
  *
  * @package WordPress
- * @subpackage petstore
- * @since petstore 1.0
+ * @subpackage petfirst
+ * @since petfirst 1.0
  */
 ?>
 <!DOCTYPE html>

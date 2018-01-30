@@ -5,8 +5,8 @@
  * Contains the closing of the #content div and all content after
  *
  * @package WordPress
- * @subpackage petstore
- * @since petstore 1.0
+ * @subpackage petfirst
+ * @since petfirst 1.0
  */
 ?>
 
@@ -36,7 +36,7 @@
 
                                 <div id="site-header-menu" class="site-header-menu">
                                 
-                                    <nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'petstore' ); ?>">
+                                    <nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'petfirst' ); ?>">
 
                                         <?php
                                             wp_nav_menu( array(
@@ -55,7 +55,7 @@
 
                                 <div id="site-header-menu" class="site-header-menu">
                                 
-                                    <nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Footer Terms Menu', 'petstore' ); ?>">
+                                    <nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Footer Terms Menu', 'petfirst' ); ?>">
 
                                         <?php
                                             wp_nav_menu( array(

@@ -3,8 +3,8 @@
  * The template part for displaying results in search pages
  *
  * @package WordPress
- * @subpackage petstore
- * @since petstore 1.0
+ * @subpackage petfirst
+ * @since petfirst 1.0
  */
 ?>
 
@@ -14,10 +14,10 @@
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php petstore_post_thumbnail(); ?>
+	<?php petfirst_post_thumbnail(); ?>
 
 	<div class="meta-details">
-		<?php petstore_entry_meta(); ?>
+		<?php petfirst_entry_meta(); ?>
 	</div>
 
 	<?php if ( 'post' === get_post_type() ) : ?>
@@ -28,7 +28,7 @@
 				edit_post_link(
 					sprintf(
 						/* translators: %s: Name of current post */
-						__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'petstore' ),
+						__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'petfirst' ),
 						get_the_title()
 					),
 					'<span class="edit-link">',
@@ -43,7 +43,7 @@
 			edit_post_link(
 				sprintf(
 					/* translators: %s: Name of current post */
-					__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'petstore' ),
+					__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'petfirst' ),
 					get_the_title()
 				),
 				'<footer class="entry-footer"><span class="edit-link">',

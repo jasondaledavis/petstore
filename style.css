@@ -1,5 +1,5 @@
 /*
-Theme Name: Petstore
+Theme Name: petfirst
 Theme URI: https://molecule.element502.com
 Author: Blackstone Media
 Author URI: http://blackstonemedia.com
@@ -8,7 +8,7 @@ Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
-Text Domain: petstore
+Text Domain: petfirst
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -537,7 +537,7 @@ html {
 *:before,
 *:after {
     /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-    
+
     -webkit-box-sizing: inherit;
     -moz-box-sizing: inherit;
     box-sizing: inherit;
@@ -546,7 +546,7 @@ body {
     background: #ffffff;
     font-family: 'Fira Sans', 'Open Sans', 'Arial', sans-serif;
     /* Fallback for when there is no custom background color defined. */
-    
+
     margin: 0;
     min-height: 100%;
     -webkit-text-size-adjust: 100%;
@@ -597,10 +597,10 @@ dd {
 img {
     height: auto;
     /* Make sure images are scaled correctly. */
-    
+
     max-width: 100%;
     /* Adhere to container width. */
-    
+
     vertical-align: middle;
 }
 del {
@@ -618,7 +618,7 @@ table {
     margin: 0 0 1.75em;
     table-layout: fixed;
     /* Prevents HTML tables from becoming too wide */
-    
+
     width: 100%;
 }
 caption,
@@ -674,31 +674,31 @@ input[type=radio], input[type=checkbox] {
     display:none !important;
 }
 input[type=radio] + label:before {
-    content: "";  
-    display: inline-block;  
-    width: 15px;  
-    height: 15px;  
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
     vertical-align:middle;
-    margin-right: 8px;  
-    background-color: #aaa;  
+    margin-right: 8px;
+    background-color: #aaa;
     box-shadow: inset 0px 2px 2px rgba(0, 0, 0, .3);
-    border-radius: 8px;  
+    border-radius: 8px;
 }
 input[type=checkbox] + label:before {
-    content: "";  
-    display: inline-block;  
-    width: 15px;  
-    height: 15px;  
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
     vertical-align:middle;
-    margin-right: 8px;  
-    background-color: #a0a0a0;  
+    margin-right: 8px;
+    background-color: #a0a0a0;
     box-shadow: inset 0px 2px 2px rgba(0, 0, 0, .3);
-    border-radius: 4px;  
+    border-radius: 4px;
 }
 input[type=radio]:checked + label:before {
     content: "\2022"; /* Bullet */
     color:white;
-    background-color: #A0A0A0; 
+    background-color: #A0A0A0;
     font-size:1.8em;
     text-align:center;
     line-height:14px;
@@ -707,7 +707,7 @@ input[type=radio]:checked + label:before {
 input[type=checkbox]:checked + label:before {
     content:"\2714"; /* Tick */
     color:white;
-    background-color: #a0a0a0; 
+    background-color: #a0a0a0;
     text-align:center;
     line-height:15px;
     text-shadow:0px 0px 3px #c2c2c2;
@@ -1178,7 +1178,7 @@ a:active {
     position: absolute !important;
     width: 1px;
     /* many screen reader and browser combinations announce broken words as they would appear visually */
-    
+
     word-wrap: normal !important;
 }
 /* must have higher specificity than alternative color schemes inline styles */
@@ -1383,13 +1383,13 @@ blockquote:after,
     padding-right: 2px;
     font-size: 1.4em;
 }
-.tagcloud ul { 
-   list-style-type: none; 
-    margin-left: 0; 
+.tagcloud ul {
+   list-style-type: none;
+    margin-left: 0;
 }
-.tagcloud ul li { 
-    display: inline-block; 
-} 
+.tagcloud ul li {
+    display: inline-block;
+}
 /**
  * 10.1 - Header Top Bar Widgets
  */
@@ -1402,18 +1402,18 @@ blockquote:after,
     float: right;
     min-height: 40px;
 }
-#petstore-topbar {
+#petfirst-topbar {
     background: #f5f5f5;
     border-bottom: 1px solid #f0f0f0;
     min-height: 40px;
 }
-#petstore-topbar .row {
+#petfirst-topbar .row {
     margin-bottom: 0;
 }
-#petstore-topbar .widget {
+#petfirst-topbar .widget {
     padding-top: 8px;
 }
-#petstore-topbar .widget p {
+#petfirst-topbar .widget p {
     margin: 0px;
     font-family: 'Fira Sans', 'Open Sans', 'Arial', sans-serif;
     font-weight: normal;
@@ -1425,17 +1425,17 @@ blockquote:after,
     padding-top: 5px;
     text-transform: uppercase;
 }
-#petstore-topbar .widget a {padding:0;}
-/* petstore-topbar widget searchbar */
+#petfirst-topbar .widget a {padding:0;}
+/* petfirst-topbar widget searchbar */
 
-#petstore-topbar .widget.widget_search {
+#petfirst-topbar .widget.widget_search {
     padding: 4px 0 0;
 }
-#petstore-topbar .searchbar input[type="text"],
-#petstore-topbar .searchbar input[type="password"],
-#petstore-topbar .searchbar input[type="email"],
-#petstore-topbar .searchbar textarea,
-#petstore-topbar .searchbar select {
+#petfirst-topbar .searchbar input[type="text"],
+#petfirst-topbar .searchbar input[type="password"],
+#petfirst-topbar .searchbar input[type="email"],
+#petfirst-topbar .searchbar textarea,
+#petfirst-topbar .searchbar select {
     background: #F0F0F0 url(assets/img/search.svg) 100% 49% no-repeat;
     color: #676767;
     box-shadow: none;
@@ -1449,24 +1449,24 @@ blockquote:after,
     border-radius: 3px;
     float: right;
 }
-#petstore-topbar .searchbar input[type="text"]:focus {
+#petfirst-topbar .searchbar input[type="text"]:focus {
     border: solid 2px #222222;
     border-radius: 0;
 }
-#petstore-topbar .searchbar input[type="text"] img {
+#petfirst-topbar .searchbar input[type="text"] img {
     width: 30%;
 }
-/* petstore-topbar widget menu dropdowns */
+/* petfirst-topbar widget menu dropdowns */
 
-#petstore-topbar ul {
+#petfirst-topbar ul {
     list-style: none;
     margin: 0;
 }
-#petstore-topbar li {
+#petfirst-topbar li {
     position: relative;
     display: inline-block;
 }
-#petstore-topbar a {
+#petfirst-topbar a {
     font-family: 'Fira Sans', 'Open Sans', 'Arial', sans-serif;
     font-weight: normal;
     color: #A0A0A0;
@@ -1476,28 +1476,28 @@ blockquote:after,
     letter-spacing: .5px;
     text-transform: uppercase;
 }
-#petstore-topbar a:hover,
-#petstore-topbar a:focus {
+#petfirst-topbar a:hover,
+#petfirst-topbar a:focus {
     color: #222222;
 }
-#petstore-topbar .current-menu-item>a,
-#petstore-topbar .current-menu-ancestor>a {
+#petfirst-topbar .current-menu-item>a,
+#petfirst-topbar .current-menu-ancestor>a {
     font-weight: normal;
 }
-#petstore-topbar ul ul {
+#petfirst-topbar ul ul {
     display: none;
     margin-left: 0.875em;
 }
-.no-js #petstore-topbar ul ul {
+.no-js #petfirst-topbar ul ul {
     display: block;
 }
-#petstore-topbar ul .toggled-on {
+#petfirst-topbar ul .toggled-on {
     display: block;
 }
-#petstore-topbar .primary-menu {
+#petfirst-topbar .primary-menu {
     border-bottom: 1px solid #a0a0a0;
 }
-#petstore-topbar .menu-item-has-children>a {
+#petfirst-topbar .menu-item-has-children>a {
     margin-right: 56px;
 }
 .site-header-main {
@@ -1511,27 +1511,27 @@ blockquote:after,
     -ms-flex: 0 1 auto;
     flex: 0 1 auto;
 }
-#petstore-topbar {
+#petfirst-topbar {
     margin: 0 -0.875em;
 }
-#petstore-topbar .primary-menu,
-#petstore-topbar .primary-menu>li {
+#petfirst-topbar .primary-menu,
+#petfirst-topbar .primary-menu>li {
     border: 0;
 }
-#petstore-topbar .primary-menu>li {
+#petfirst-topbar .primary-menu>li {
     float: left;
 }
-#petstore-topbar a {
+#petfirst-topbar a {
     outline-offset: -8px;
     padding: 0.65625em 0.875em;
     white-space: nowrap;
     text-transform: uppercase;
 }
-#petstore-topbar li:hover>a,
-#petstore-topbar li.focus>a {
+#petfirst-topbar li:hover>a,
+#petfirst-topbar li.focus>a {
     color: #222222;
 }
-#petstore-topbar ul ul {
+#petfirst-topbar ul ul {
     border-bottom: 1px solid #a0a0a0;
     display: block;
     left: -999em;
@@ -1539,65 +1539,65 @@ blockquote:after,
     position: absolute;
     z-index: 99999;
 }
-#petstore-topbar ul ul ul {
+#petfirst-topbar ul ul ul {
     top: -1px;
 }
-#petstore-topbar ul ul ul:before,
-#petstore-topbar ul ul ul:after {
+#petfirst-topbar ul ul ul:before,
+#petfirst-topbar ul ul ul:after {
     border: 0;
 }
-#petstore-topbar ul ul li {
+#petfirst-topbar ul ul li {
     background-color: #fff;
     border: 1px solid #a0a0a0;
     border-bottom-width: 0;
 }
-#petstore-topbar ul ul a {
+#petfirst-topbar ul ul a {
     white-space: normal;
     width: 12.6875em;
 }
-#petstore-topbar ul ul:before,
-#petstore-topbar ul ul:after {
+#petfirst-topbar ul ul:before,
+#petfirst-topbar ul ul:after {
     border-style: solid;
     content: "";
     position: absolute;
 }
-#petstore-topbar ul ul:before {
+#petfirst-topbar ul ul:before {
     border-color: #a0a0a0 transparent;
     border-width: 0 10px 10px;
     right: 9px;
     top: -9px;
 }
-#petstore-topbar ul ul:after {
+#petfirst-topbar ul ul:after {
     border-color: #fff transparent;
     border-width: 0 8px 8px;
     right: 11px;
     top: -7px;
 }
-#petstore-topbar li:hover>ul,
-#petstore-topbar li.focus>ul {
+#petfirst-topbar li:hover>ul,
+#petfirst-topbar li.focus>ul {
     left: auto;
     right: 0;
 }
-#petstore-topbar ul ul li:hover>ul,
-#petstore-topbar ul ul li.focus>ul {
+#petfirst-topbar ul ul li:hover>ul,
+#petfirst-topbar ul ul li.focus>ul {
     left: auto;
     right: 100%;
 }
-#petstore-topbar .menu-item-has-children>a {
+#petfirst-topbar .menu-item-has-children>a {
     margin: 0;
     padding-right: 2.25em;
 }
-#petstore-topbar .menu-item-has-children>a:after {
+#petfirst-topbar .menu-item-has-children>a:after {
     content: "\f431";
     font-family: Genericons;
     position: absolute;
     right: 0.625em;
     top: 0.825em;
 }
-#petstore-topbar ul ul .menu-item-has-children>a {
+#petfirst-topbar ul ul .menu-item-has-children>a {
     padding-right: 2.0625em;
 }
-#petstore-topbar ul ul .menu-item-has-children>a:after {
+#petfirst-topbar ul ul .menu-item-has-children>a:after {
     right: 0.5625em;
     top: 0.875em;
     -webkit-transform: rotate(90deg);
@@ -2621,7 +2621,7 @@ span.comments-link a:hover {
 .footer-global {
     padding: 16px 0 1px;
     /*makes the footer stick to bottom*/
-    
+
     border-top: solid 1px #c2c2c2;
     background: white;
 }
@@ -2916,7 +2916,7 @@ p>video {
         line-height: 1.25;
     }
     /* restore screen-reader-text */
-    
+
     .pagination .current .screen-reader-text {
         position: absolute !important;
     }
@@ -3330,7 +3330,7 @@ p>video {
 
 @media screen and (max-width: 48em) {
     .site-header-menu,
-    #petstore-topbar {
+    #petfirst-topbar {
         display: none;
     }
     .menu-toggle {

@@ -1,6 +1,6 @@
 <?php
 /**
- * petstore functions and definitions
+ * petfirst functions and definitions
  *
  * Set up the theme and provides some helper functions, which are used in the
  * theme as custom template tags. Others are attached to action and filter
@@ -21,7 +21,7 @@
  * {@link https://codex.wordpress.org/Plugin_API}
  *
  * @package WordPress
- * @subpackage petstore
+ * @subpackage petfirst
  * @since Twenty Sixteen 1.4
  */
  
@@ -30,7 +30,7 @@
 //================================================================================//
 require get_template_directory() . '/inc/theme-function.php';
 /**
- * petstore only works in WordPress 4.4 or later.
+ * petfirst only works in WordPress 4.4 or later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
     require get_template_directory() . '/inc/back-compat.php';
@@ -45,7 +45,7 @@ require get_template_directory() . '/inc/template-tags.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
-if ( ! function_exists( 'petstore_setup' ) ) :
+if ( ! function_exists( 'petfirst_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -53,19 +53,19 @@ if ( ! function_exists( 'petstore_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  *
- * Create your own petstore_setup() function to override in a child theme.
+ * Create your own petfirst_setup() function to override in a child theme.
  *
- * @since petstore 1.0
+ * @since petfirst 1.0
  */
-function petstore_setup() {
+function petfirst_setup() {
 
     /*
     * Make theme available for translation.
     * Translations can be filed in the /languages/ directory.
-    * If you're building a theme based on petstore, use a find and replace
-    * to change 'petstore' to the name of your theme in all the template files
+    * If you're building a theme based on petfirst, use a find and replace
+    * to change 'petfirst' to the name of your theme in all the template files
     */
-    load_theme_textdomain( 'petstore' );
+    load_theme_textdomain( 'petfirst' );
 
     // Add default posts and comments RSS feed links to head.
     add_theme_support( 'automatic-feed-links' );
@@ -81,7 +81,7 @@ function petstore_setup() {
     /*
     * Enable support for custom logo.
     *
-    * @since petstore 1.0
+    * @since petfirst 1.0
     */
     add_theme_support( 'custom-logo', array(
       'height'      => 240,
@@ -123,9 +123,9 @@ function petstore_setup() {
 
     // This theme uses wp_nav_menu() in two locations.
     register_nav_menus( array(
-      'primary' => __( 'Primary Menu', 'petstore' ),
-      'footernav' => __( 'Footer Menu', 'petstore' ),
-      'footernavterms' => __( 'Footer Terms Menu', 'petstore' ),
+      'primary' => __( 'Primary Menu', 'petfirst' ),
+      'footernav' => __( 'Footer Menu', 'petfirst' ),
+      'footernavterms' => __( 'Footer Terms Menu', 'petfirst' ),
     ) );
 
     /*
@@ -150,9 +150,9 @@ function petstore_setup() {
   add_theme_support( 'customize-selective-refresh-widgets' );
 
 }
-endif; // petstore_setup
+endif; // petfirst_setup
 
-add_action( 'after_setup_theme', 'petstore_setup' );
+add_action( 'after_setup_theme', 'petfirst_setup' );
 
 /**
 * Sets the content width in pixels, based on the theme's design and stylesheet.
@@ -161,26 +161,26 @@ add_action( 'after_setup_theme', 'petstore_setup' );
 *
 * @global int $content_width
 *
-* @since petstore 1.0
+* @since petfirst 1.0
 */
-function petstore_content_width() {
-    $GLOBALS['content_width'] = apply_filters( 'petstore_content_width', 840 );
+function petfirst_content_width() {
+    $GLOBALS['content_width'] = apply_filters( 'petfirst_content_width', 840 );
 }
-add_action( 'after_setup_theme', 'petstore_content_width', 0 );
+add_action( 'after_setup_theme', 'petfirst_content_width', 0 );
 
 /**
 * Registers a widget area.
 *
 * @link https://developer.wordpress.org/reference/functions/register_sidebar/
 *
-* @since petstore 1.0
+* @since petfirst 1.0
 */
-function petstore_widgets_init() {
+function petfirst_widgets_init() {
 
   register_sidebar( array(
-    'name' => __('Blog Sidebar', 'petstore' ),
+    'name' => __('Blog Sidebar', 'petfirst' ),
     'id' => 'sidebar-blog',
-    'description'   => __( 'Add widgets here to appear in your blog posts and page sidebar.', 'petstore' ),
+    'description'   => __( 'Add widgets here to appear in your blog posts and page sidebar.', 'petfirst' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => "</div>",
     'before_title' => '<h4 class="widget-title">',
@@ -188,9 +188,9 @@ function petstore_widgets_init() {
   ) );
 
   // register_sidebar( array(
-  //   'name' => __('Page Sidebar', 'petstore' ),
+  //   'name' => __('Page Sidebar', 'petfirst' ),
   //   'id' => 'sidebar-page',
-  //   'description'   => __( 'Add widgets here to appear in your pages sidebar.', 'petstore' ),
+  //   'description'   => __( 'Add widgets here to appear in your pages sidebar.', 'petfirst' ),
   //   'before_widget' => '<div id="%1$s" class="widget %2$s">',
   //   'after_widget' => "</div>",
   //   'before_title' => '<h4 class="widget-title">',
@@ -198,9 +198,9 @@ function petstore_widgets_init() {
   // ) );
 
   register_sidebar( array(
-    'name' => __('Footer Sidebar 1', 'petstore' ),
+    'name' => __('Footer Sidebar 1', 'petfirst' ),
     'id' => 'sidebar-footer-1',
-    'description'   => __( 'Add widgets here to appear in your footer sidebar column one.', 'petstore' ),
+    'description'   => __( 'Add widgets here to appear in your footer sidebar column one.', 'petfirst' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => "</div>",
     'before_title' => '<h4 class="widget-title">',
@@ -208,9 +208,9 @@ function petstore_widgets_init() {
   ) );
 
   register_sidebar( array(
-    'name' => __('Footer Sidebar 2', 'petstore' ),
+    'name' => __('Footer Sidebar 2', 'petfirst' ),
     'id' => 'sidebar-footer-2',
-    'description'   => __( 'Add widgets here to appear in your footer sidebar column two.', 'petstore' ),
+    'description'   => __( 'Add widgets here to appear in your footer sidebar column two.', 'petfirst' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => "</div>",
     'before_title' => '<h4 class="widget-title">',
@@ -218,9 +218,9 @@ function petstore_widgets_init() {
   ) );
 
   register_sidebar( array(
-    'name' => __('Footer Sidebar 3', 'petstore' ),
+    'name' => __('Footer Sidebar 3', 'petfirst' ),
     'id' => 'sidebar-footer-3',
-    'description'   => __( 'Add widgets here to appear in your footer sidebar column three.', 'petstore' ),
+    'description'   => __( 'Add widgets here to appear in your footer sidebar column three.', 'petfirst' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => "</div>",
     'before_title' => '<h4 class="widget-title">',
@@ -228,9 +228,9 @@ function petstore_widgets_init() {
   ) );
 
   register_sidebar( array(
-    'name' => __('Footer Sidebar 4', 'petstore' ),
+    'name' => __('Footer Sidebar 4', 'petfirst' ),
     'id' => 'sidebar-footer-4',
-    'description'   => __( 'Add widgets here to appear in your footer sidebar column four.', 'petstore' ),
+    'description'   => __( 'Add widgets here to appear in your footer sidebar column four.', 'petfirst' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => "</div>",
     'before_title' => '<h4 class="widget-title">',
@@ -238,9 +238,9 @@ function petstore_widgets_init() {
   ) );
 
   register_sidebar( array(
-    'name' => __('Footer Sidebar 5', 'petstore' ),
+    'name' => __('Footer Sidebar 5', 'petfirst' ),
     'id' => 'sidebar-footer-5',
-    'description'   => __( 'Add widgets here to appear in your footer sidebar column five.', 'petstore' ),
+    'description'   => __( 'Add widgets here to appear in your footer sidebar column five.', 'petfirst' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => "</div>",
     'before_title' => '<h4 class="widget-title">',
@@ -248,9 +248,9 @@ function petstore_widgets_init() {
   ) );
 
   register_sidebar( array(
-    'name' => __('Footer CTA', 'petstore' ),
+    'name' => __('Footer CTA', 'petfirst' ),
     'id' => 'sidebar-footer-cta',
-    'description'   => __( 'This is for your CTA in the footer centered in the row above footer nav.', 'petstore' ),
+    'description'   => __( 'This is for your CTA in the footer centered in the row above footer nav.', 'petfirst' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => "</div>",
     'before_title' => '<h4 class="widget-title">',
@@ -258,9 +258,9 @@ function petstore_widgets_init() {
   ) );
 
   register_sidebar( array(
-    'name' => __('Footer Terms Widget', 'petstore' ),
+    'name' => __('Footer Terms Widget', 'petfirst' ),
     'id' => 'sidebar-footer-terms',
-    'description'   => __( 'This is for your Terms in the footer centered in the row below footer nav.', 'petstore' ),
+    'description'   => __( 'This is for your Terms in the footer centered in the row below footer nav.', 'petfirst' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => "</div>",
     'before_title' => '<h4 class="widget-title">',
@@ -268,9 +268,9 @@ function petstore_widgets_init() {
   ) );
 
   register_sidebar( array(
-    'name' => __('Top Sidebar Left', 'petstore' ),
+    'name' => __('Top Sidebar Left', 'petfirst' ),
     'id' => 'topbar-left',
-    'description'   => __( 'Add widgets here to appear in above your header in a sidebar on the left.', 'petstore' ),
+    'description'   => __( 'Add widgets here to appear in above your header in a sidebar on the left.', 'petfirst' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => "</div>",
     'before_title' => '<h4 class="widget-title">',
@@ -278,9 +278,9 @@ function petstore_widgets_init() {
   ) );
 
   register_sidebar( array(
-    'name' => __('Top Sidebar Right', 'petstore' ),
+    'name' => __('Top Sidebar Right', 'petfirst' ),
     'id' => 'topbar-right',
-    'description'   => __( 'Add widgets here to appear in above your header in a sidebar on the right.', 'petstore' ),
+    'description'   => __( 'Add widgets here to appear in above your header in a sidebar on the right.', 'petfirst' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => "</div>",
     'before_title' => '<h4 class="widget-title">',
@@ -290,9 +290,9 @@ function petstore_widgets_init() {
   if ( class_exists( 'WooCommerce' ) ) {
                  
     register_sidebar( array(
-    'name' => __('Shop Sidebar', 'petstore' ),
+    'name' => __('Shop Sidebar', 'petfirst' ),
     'id'   => 'sidebar-shop',
-    'description'   => __( 'Add widgets here to appear in your shop and products pages sidebar.', 'petstore' ),
+    'description'   => __( 'Add widgets here to appear in your shop and products pages sidebar.', 'petfirst' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title' => '<h4 class="widget-title">',
@@ -303,35 +303,35 @@ function petstore_widgets_init() {
 
 }
 
-add_action( 'widgets_init', 'petstore_widgets_init' );
+add_action( 'widgets_init', 'petfirst_widgets_init' );
 
-if ( ! function_exists( 'petstore_fonts_url' ) ) :
+if ( ! function_exists( 'petfirst_fonts_url' ) ) :
 /**
  * Register Google fonts for Twenty Sixteen.
  *
- * Create your own petstore_fonts_url() function to override in a child theme.
+ * Create your own petfirst_fonts_url() function to override in a child theme.
  *
  * @since Twenty Sixteen 1.0
  *
  * @return string Google fonts URL for the theme.
  */
-function petstore_fonts_url() {
+function petfirst_fonts_url() {
   $fonts_url = '';
   $fonts     = array();
   $subsets   = 'latin,latin-ext';
 
   /* translators: If there are characters in your language that are not supported by Open Sans, translate this to 'off'. Do not translate into your own language. */
-  if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'petstore' ) ) {
+  if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'petfirst' ) ) {
     $fonts[] = 'Open Sans:400,700,900,400italic,700italic,900italic';
   }
 
   /* translators: If there are characters in your language that are not supported by Montserrat, translate this to 'off'. Do not translate into your own language. */
-  if ( 'off' !== _x( 'on', 'Fira Sans font: on or off', 'petstore' ) ) {
+  if ( 'off' !== _x( 'on', 'Fira Sans font: on or off', 'petfirst' ) ) {
     $fonts[] = 'Fira Sans:300,400,500,600,700,800,900';
   }
 
   /* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
-  if ( 'off' !== _x( 'on', 'Merriweather font: on or off', 'petstore' ) ) {
+  if ( 'off' !== _x( 'on', 'Merriweather font: on or off', 'petfirst' ) ) {
     $fonts[] = 'Merriweather:300,400,500,600,700';
   }
 
@@ -351,78 +351,78 @@ endif;
 *
 * Adds a `js` class to the root `<html>` element when JavaScript is detected.
 *
-* @since petstore 1.0
+* @since petfirst 1.0
 */
-function petstore_javascript_detection() {
+function petfirst_javascript_detection() {
 echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
-add_action( 'wp_head', 'petstore_javascript_detection', 0 );
+add_action( 'wp_head', 'petfirst_javascript_detection', 0 );
 
 /**
 * Enqueues scripts and styles.
 *
-* @since petstore 1.0
+* @since petfirst 1.0
 */
 
-function petstore_scripts() {
+function petfirst_scripts() {
 
   // Add Genericons, used in the main stylesheet.
   wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
 
   // Theme stylesheet.
-  wp_enqueue_style( 'petstore-style', get_stylesheet_uri() );
+  wp_enqueue_style( 'petfirst-style', get_stylesheet_uri() );
 
   // Gutenberg stylesheet.
-  // wp_enqueue_style( 'petstore-gutes', get_template_directory_uri() . '/assets/css/gutes.css');
+  // wp_enqueue_style( 'petfirst-gutes', get_template_directory_uri() . '/assets/css/gutes.css');
 
   // Gutenberg stylesheet.
-  wp_enqueue_style( 'petstore-main', get_template_directory_uri() . '/main.css');
+  wp_enqueue_style( 'petfirst-main', get_template_directory_uri() . '/main.css');
 
   // Add custom fonts, used in the main stylesheet.
-  wp_enqueue_style( 'petstore-fonts', petstore_fonts_url(), array(), null );
+  wp_enqueue_style( 'petfirst-fonts', petfirst_fonts_url(), array(), null );
 
   // Load the Internet Explorer specific stylesheet.
-  wp_enqueue_style( 'petstore-ie', get_template_directory_uri() . '/assets/css/ie.css', array( 'petstore-style' ), '20160816' );
-  wp_style_add_data( 'petstore-ie', 'conditional', 'lt IE 10' );
+  wp_enqueue_style( 'petfirst-ie', get_template_directory_uri() . '/assets/css/ie.css', array( 'petfirst-style' ), '20160816' );
+  wp_style_add_data( 'petfirst-ie', 'conditional', 'lt IE 10' );
 
   // Load the Internet Explorer 8 specific stylesheet.
-  wp_enqueue_style( 'petstore-ie8', get_template_directory_uri() . '/assets/css/ie8.css', array( 'petstore-style' ), '20160816' );
-  wp_style_add_data( 'petstore-ie8', 'conditional', 'lt IE 9' );
+  wp_enqueue_style( 'petfirst-ie8', get_template_directory_uri() . '/assets/css/ie8.css', array( 'petfirst-style' ), '20160816' );
+  wp_style_add_data( 'petfirst-ie8', 'conditional', 'lt IE 9' );
   
   // Load the Internet Explorer 7 specific stylesheet.
-  wp_enqueue_style( 'petstore-ie7', get_template_directory_uri() . '/assets/css/ie7.css', array( 'petstore-style' ), '20160816' );
-  wp_style_add_data( 'petstore-ie7', 'conditional', 'lt IE 8' );
+  wp_enqueue_style( 'petfirst-ie7', get_template_directory_uri() . '/assets/css/ie7.css', array( 'petfirst-style' ), '20160816' );
+  wp_style_add_data( 'petfirst-ie7', 'conditional', 'lt IE 8' );
 
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
     wp_enqueue_script( 'comment-reply' );
   }
 
   if ( is_singular() && wp_attachment_is_image() ) {
-    wp_enqueue_script( 'petstore-keyboard-image-navigation-min', get_template_directory_uri() . '/assets/js/min/keyboard-image-navigation.min.js', array( 'jquery' ), '20160816' );
+    wp_enqueue_script( 'petfirst-keyboard-image-navigation-min', get_template_directory_uri() . '/assets/js/min/keyboard-image-navigation.min.js', array( 'jquery' ), '20160816' );
   }
   
   // Enqueue Scripts
-  wp_enqueue_script( 'petstore-script', get_template_directory_uri() . '/assets/js/min/custom-functions.min.js', array( 'jquery' ), '20160816', true );
+  wp_enqueue_script( 'petfirst-script', get_template_directory_uri() . '/assets/js/min/custom-functions.min.js', array( 'jquery' ), '20160816', true );
   
 
-  wp_localize_script( 'petstore-script', 'screenReaderText', array(
-    'expand'   => __( 'expand child menu', 'petstore' ),
-    'collapse' => __( 'collapse child menu', 'petstore' ),
+  wp_localize_script( 'petfirst-script', 'screenReaderText', array(
+    'expand'   => __( 'expand child menu', 'petfirst' ),
+    'collapse' => __( 'collapse child menu', 'petfirst' ),
   ) );
 
 }
 
-add_action( 'wp_enqueue_scripts', 'petstore_scripts' );
+add_action( 'wp_enqueue_scripts', 'petfirst_scripts' );
 
 /**
 * Adds custom classes to the array of body classes.
 *
-* @since petstore 1.0
+* @since petfirst 1.0
 *
 * @param array $classes Classes for the body element.
 * @return array (Maybe) filtered body classes.
 */
-function petstore_body_classes( $classes ) {
+function petfirst_body_classes( $classes ) {
   // Adds a class of custom-background-image to sites with a custom background image.
   if ( get_background_image() ) {
 
@@ -455,18 +455,18 @@ function petstore_body_classes( $classes ) {
 
 }
 
-add_filter( 'body_class', 'petstore_body_classes' );
+add_filter( 'body_class', 'petfirst_body_classes' );
 
 /**
 * Converts a HEX value to RGB.
 *
-* @since petstore 1.0
+* @since petfirst 1.0
 *
 * @param string $color The original color, in 3- or 6-digit hexadecimal form.
 * @return array Array containing RGB (red, green, and blue) values for the given
 *               HEX code, empty array otherwise.
 */
-function petstore_hex2rgb( $color ) {
+function petfirst_hex2rgb( $color ) {
 $color = trim( $color, '#' );
 
   if ( strlen( $color ) === 3 ) {
@@ -548,12 +548,12 @@ add_filter( 'wp_get_attachment_image_attributes', 'twentysixteen_post_thumbnail_
 /**
 * Modifies tag cloud widget arguments to have all tags in the widget same font size.
 *
-* @since petstore 1.0
+* @since petfirst 1.0
 *
 * @param array $args Arguments for tag cloud widget.
 * @return array A new modified arguments.
 */
-function petstore_widget_tag_cloud_args( $args ) {
+function petfirst_widget_tag_cloud_args( $args ) {
 
   $args['largest']  = 1;
   $args['smallest'] = 1;
@@ -564,13 +564,13 @@ function petstore_widget_tag_cloud_args( $args ) {
 
 }
 
-add_filter( 'widget_tag_cloud_args', 'petstore_widget_tag_cloud_args' );
+add_filter( 'widget_tag_cloud_args', 'petfirst_widget_tag_cloud_args' );
 
 
 /**
 * Modifies the content editor to add instructions for the end users or content editors.
 *
-* @since petstore 1.0
+* @since petfirst 1.0
 *
 */
 // add_action( 'edit_form_top', function( $post ) 

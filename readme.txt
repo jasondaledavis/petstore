@@ -1,4 +1,4 @@
-# Petstore Theme
+# petfirst Theme
 
 * Author: Jason Davis
 * Requires at least: WordPress 4.7+
@@ -9,20 +9,20 @@
 * Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
 
 ## Description
-petstore is a modernized take on an ever-popular WordPress layout — the horizontal masthead with an optional right sidebar and four column footer widgetized area that works perfectly for blogs and websites. It has a harmonious fluid grid using a mobile-first approach, and impeccable polish in every detail. petstore will make your WordPress look beautiful everywhere.
+petfirst is a modernized take on an ever-popular WordPress layout — the horizontal masthead with an optional right sidebar and four column footer widgetized area that works perfectly for blogs and websites. It has a harmonious fluid grid using a mobile-first approach, and impeccable polish in every detail. petfirst will make your WordPress look beautiful everywhere.
 
 * Mobile-first, Responsive Layout
 * Customizer Enabled for Background, Header, and Widgets
 * The GPL v2.0 or later license. :) Use it to make something cool.
 
-For more information about petstore please go to <a href="https://molecule.element502.com">https://molecule.element502.com</a> petstore is based on the popular theme Molecule which is based on Twenty Sixteen. 
+For more information about petfirst please go to <a href="https://molecule.element502.com">https://molecule.element502.com</a> petfirst is based on the popular theme Molecule which is based on Twenty Sixteen. 
 
 For more information about Twenty Sixteen please go to https://codex.wordpress.org/Twenty_Sixteen.
 
 ### Copyright
 
-petstore WordPress Theme, Copyright 2017 <a href="http://iamjasondavis.com">http://iamjasondavis.com</a>
-petstore is distributed under the terms of the GNU GPL WordPress.org
+petfirst WordPress Theme, Copyright 2017 <a href="http://iamjasondavis.com">http://iamjasondavis.com</a>
+petfirst is distributed under the terms of the GNU GPL WordPress.org
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -34,7 +34,7 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-Petstore Theme bundles the following third-party resources:
+petfirst Theme bundles the following third-party resources:
 
 Genericons icon font, Copyright 2013-2015 Automattic.com<br>
 License: GNU GPL, Version 2 (or later)<br>

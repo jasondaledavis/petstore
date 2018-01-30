@@ -3,8 +3,8 @@
  * The template part for displaying single posts
  *
  * @package WordPress
- * @subpackage petstore
- * @since petstore 1.0
+ * @subpackage petfirst
+ * @since petfirst 1.0
  */
 ?>
 
@@ -17,11 +17,11 @@
 				the_content();
 
 				wp_link_pages( array(
-					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'petstore' ) . '</span>',
+					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'petfirst' ) . '</span>',
 					'after'       => '</div>',
 					'link_before' => '<span>',
 					'link_after'  => '</span>',
-					'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'petstore' ) . ' </span>%',
+					'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'petfirst' ) . ' </span>%',
 					'separator'   => '<span class="screen-reader-text">, </span>',
 				) );
 
@@ -44,7 +44,7 @@
 				edit_post_link(
 					sprintf(
 						/* translators: %s: Name of current post */
-						__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'petstore' ),
+						__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'petfirst' ),
 						get_the_title()
 					),
 					'<span class="edit-link">',

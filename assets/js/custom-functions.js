@@ -173,7 +173,7 @@ jQuery(document).ready(function(a) {
                 h = g.offset(),
                 i = h.top + (g.height() + 28),
                 j = d.closest("figure");
-            f > i ? "img.size-full" === b ? (c = new Image, c.src = d.attr("src"), a(c).on("load.petstore", function() {
+            f > i ? "img.size-full" === b ? (c = new Image, c.src = d.attr("src"), a(c).on("load.petfirst", function() {
                 c.width >= 840 && (d.addClass("below-entry-meta"), j.hasClass("wp-caption") && (j.addClass("below-entry-meta"), j.removeAttr("style")))
             })) : d.addClass("below-entry-meta") : (d.removeClass("below-entry-meta"), j.removeClass("below-entry-meta"))
         })
@@ -181,24 +181,24 @@ jQuery(document).ready(function(a) {
     var e, f, g, h, i, j, k;
     b(a(".main-navigation")), f = a("#masthead"), g = f.find("#menu-toggle"), j = f.find("#site-header-menu"), h = f.find("#site-navigation"), i = f.find("#social-navigation"),
         function() {
-            g.length && (g.add(h).add(i).attr("aria-expanded", "false"), g.on("click.petstore", function() {
+            g.length && (g.add(h).add(i).attr("aria-expanded", "false"), g.on("click.petfirst", function() {
                 a(this).add(j).toggleClass("toggled-on"), a(this).add(h).add(i).attr("aria-expanded", "false" === a(this).add(h).add(i).attr("aria-expanded") ? "true" : "false")
             }))
         }(),
         function() {
             function b() {
-                window.innerWidth >= 910 ? (a(document.body).on("touchstart.petstore", function(b) {
+                window.innerWidth >= 910 ? (a(document.body).on("touchstart.petfirst", function(b) {
                     a(b.target).closest(".main-navigation li").length || a(".main-navigation li").removeClass("focus")
-                }), h.find(".menu-item-has-children > a").on("touchstart.petstore", function(b) {
+                }), h.find(".menu-item-has-children > a").on("touchstart.petfirst", function(b) {
                     var c = a(this).parent("li");
                     c.hasClass("focus") || (b.preventDefault(), c.toggleClass("focus"), c.siblings(".focus").removeClass("focus"))
-                })) : h.find(".menu-item-has-children > a").unbind("touchstart.petstore")
+                })) : h.find(".menu-item-has-children > a").unbind("touchstart.petfirst")
             }
-            h.length && h.children().length && ("ontouchstart" in window && (a(window).on("resize.petstore", b), b()), h.find("a").on("focus.petstore blur.petstore", function() {
+            h.length && h.children().length && ("ontouchstart" in window && (a(window).on("resize.petfirst", b), b()), h.find("a").on("focus.petfirst blur.petfirst", function() {
                 a(this).parents(".menu-item").toggleClass("focus")
             }))
         }(), a(document).ready(function() {
-            e = a(document.body), a(window).on("load.petstore", c).on("resize.petstore", function() {
+            e = a(document.body), a(window).on("load.petfirst", c).on("resize.petfirst", function() {
                 clearTimeout(k), k = setTimeout(function() {
                     d("img.size-full"), d("blockquote.alignleft, blockquote.alignright")
                 }, 300), c()

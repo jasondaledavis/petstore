@@ -6,8 +6,8 @@
  * other "pages" on your WordPress site will use a different template.
  *
  * @package WordPress
- * @subpackage petstore
- * @since petstore 1.0
+ * @subpackage petfirst
+ * @since petfirst 1.0
  */
 
 get_header(); ?>

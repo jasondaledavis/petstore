@@ -3,23 +3,23 @@
  * The template for the sidebar containing the main widget area
  *
  * @package WordPress
- * @subpackage petstore
- * @since petstore 1.0
+ * @subpackage petfirst
+ * @since petfirst 1.0
  */
 ?>
 
 <?php if ( class_exists( 'WooCommerce' ) ) { 
 
     // Checks for WooCommerceplugin
-    $petstoreWoo=is_woocommerce();
+    $petfirstWoo=is_woocommerce();
 
     } else {
 
-    $petstoreWoo=false;
+    $petfirstWoo=false;
 
 } ?> 
 
-<?php if ( !is_page() && !$petstoreWoo && is_active_sidebar( 'sidebar-blog' ) ) { ?>
+<?php if ( !is_page() && !$petfirstWoo && is_active_sidebar( 'sidebar-blog' ) ) { ?>
 
     <aside id="secondary" class="sidebar">
 

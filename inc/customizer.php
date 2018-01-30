@@ -1,25 +1,25 @@
 <?php
 /**
- * petstore Customizer functionality
+ * petfirst Customizer functionality
  *
  * @package WordPress
- * @subpackage petstore
- * @since petstore 1.0
+ * @subpackage petfirst
+ * @since petfirst 1.0
  */
 
 /**
  * Sets up the WordPress core custom header and custom background features.
  *
- * @since petstore 1.0
+ * @since petfirst 1.0
  *
- * @see petstore_header_style()
+ * @see petfirst_header_style()
  */
-function petstore_custom_header_and_background() {
+function petfirst_custom_header_and_background() {
 
 	/**
-	 * Filter the arguments used when adding 'custom-background' support in petstore.
+	 * Filter the arguments used when adding 'custom-background' support in petfirst.
 	 *
-	 * @since petstore 1.0
+	 * @since petfirst 1.0
 	 *
 	 * @param array $args {
 	 *     An array of custom-background support arguments.
@@ -29,9 +29,9 @@ function petstore_custom_header_and_background() {
 	 */
 	add_theme_support( 'custom-background' );
 	/**
-	 * Filter the arguments used when adding 'custom-header' support in petstore.
+	 * Filter the arguments used when adding 'custom-header' support in petfirst.
 	 *
-	 * @since petstore 1.0
+	 * @since petfirst 1.0
 	 *
 	 * @param array $args {
 	 *     An array of custom-header support arguments.
@@ -44,36 +44,36 @@ function petstore_custom_header_and_background() {
 	 *                                      displayed on the blog.
 	 * }
 	 */
-	add_theme_support( 'custom-header', apply_filters( 'petstore_custom_header_args', array(
+	add_theme_support( 'custom-header', apply_filters( 'petfirst_custom_header_args', array(
 		'width'                  => 1200,
 		'height'                 => 280,
 		'flex-height'            => true,
 		'flex-width'             => true,
-		'wp-head-callback'       => 'petstore_header_style',
+		'wp-head-callback'       => 'petfirst_header_style',
 		'header-selector'        => '.site-title a',
 		'header-text'            => true,
 	) ) );
 }
-add_action( 'after_setup_theme', 'petstore_custom_header_and_background' );
+add_action( 'after_setup_theme', 'petfirst_custom_header_and_background' );
 
-if ( ! function_exists( 'petstore_header_style' ) ) :
+if ( ! function_exists( 'petfirst_header_style' ) ) :
 /**
  * Styles the header text displayed on the site.
  *
- * Create your own petstore_header_style() function to override in a child theme.
+ * Create your own petfirst_header_style() function to override in a child theme.
  *
- * @since petstore 1.0
+ * @since petfirst 1.0
  *
- * @see petstore_custom_header_and_background().
+ * @see petfirst_custom_header_and_background().
  */
-function petstore_header_style() {
+function petfirst_header_style() {
 	// If the header text option is untouched, let's bail.
 	if ( display_header_text() ) {
 		return;
 	}
 	// If the header text has been hidden.
 	?>
-	<style type="text/css" id="petstore-header-css">
+	<style type="text/css" id="petfirst-header-css">
 		.site-title,
 		.site-description {
 			clip: rect(1px, 1px, 1px, 1px);
@@ -82,16 +82,16 @@ function petstore_header_style() {
 	</style>
 	<?php
 }
-endif; // petstore_header_style
+endif; // petfirst_header_style
 
 /**
  * Adds postMessage support for site title and description for the Customizer.
  *
- * @since petstore 1.0
+ * @since petfirst 1.0
  *
  * @param WP_Customize_Manager $wp_customize The Customizer object.
  */
-function petstore_customize_register( $wp_customize ) {
+function petfirst_customize_register( $wp_customize ) {
 
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
@@ -100,54 +100,54 @@ function petstore_customize_register( $wp_customize ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
 			'selector' => '.site-title a',
 			'container_inclusive' => false,
-			'render_callback' => 'petstore_customize_partial_blogname',
+			'render_callback' => 'petfirst_customize_partial_blogname',
 		) );
 		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
 			'selector' => '.site-description',
 			'container_inclusive' => false,
-			'render_callback' => 'petstore_customize_partial_blogdescription',
+			'render_callback' => 'petfirst_customize_partial_blogdescription',
 		) );
 	}
 
 }
-add_action( 'customize_register', 'petstore_customize_register', 11 );
+add_action( 'customize_register', 'petfirst_customize_register', 11 );
 
 /**
  * Render the site title for the selective refresh partial.
  *
- * @since petstore 1.2
- * @see petstore_customize_register()
+ * @since petfirst 1.2
+ * @see petfirst_customize_register()
  *
  * @return void
  */
-function petstore_customize_partial_blogname() {
+function petfirst_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
 /**
  * Render the site tagline for the selective refresh partial.
  *
- * @since petstore 1.2
- * @see petstore_customize_register()
+ * @since petfirst 1.2
+ * @see petfirst_customize_register()
  *
  * @return void
  */
-function petstore_customize_partial_blogdescription() {
+function petfirst_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
 /**
  * Binds JS handlers to make the Customizer preview reload changes asynchronously.
  *
- * @since petstore 1.0
+ * @since petfirst 1.0
  */
-function petstore_customize_preview_js() {
-	wp_enqueue_script( 'petstore-customize-preview', get_template_directory_uri() . '/assets/js/min/customize-preview-min.js', array( 'customize-preview' ), '20160816', true );
+function petfirst_customize_preview_js() {
+	wp_enqueue_script( 'petfirst-customize-preview', get_template_directory_uri() . '/assets/js/min/customize-preview-min.js', array( 'customize-preview' ), '20160816', true );
 }
-add_action( 'customize_preview_init', 'petstore_customize_preview_js' );
+add_action( 'customize_preview_init', 'petfirst_customize_preview_js' );
 
-// add_action( "customize_register", "petstore_theme_customize_register" );
-// function petstore_theme_customize_register( $wp_customize ) {
+// add_action( "customize_register", "petfirst_theme_customize_register" );
+// function petfirst_theme_customize_register( $wp_customize ) {
 
  //=============================================================
  // Remove Colors, Background image, and Static front page 

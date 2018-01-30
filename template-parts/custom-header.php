@@ -3,8 +3,8 @@
  * The template part for displaying an custom header thumbnail
  *
  * @package WordPress
- * @subpackage petstore
- * @since petstore 1.0
+ * @subpackage petfirst
+ * @since petfirst 1.0
  */
 ?>
 <div class="custom-header">
@@ -48,16 +48,16 @@
 
         <div class="custom-headings-inner">
 
-            <?php if ( get_post_meta( $post->ID, 'petstore_page_heading', true ) ) { ?>
+            <?php if ( get_post_meta( $post->ID, 'petfirst_page_heading', true ) ) { ?>
 
-            <h1 class="page-title"><span class="entry-title"><?php echo get_post_meta($post->ID, 'petstore_page_heading', true) ?></span></h1>
+            <h1 class="page-title"><span class="entry-title"><?php echo get_post_meta($post->ID, 'petfirst_page_heading', true) ?></span></h1>
 
             <?php } else { ?>
 
             <h1 class="page-title"><span class="entry-title"><?php the_title(); ?></span></h1>
             <?php } ?>
 
-            <h2 class="page-subtitle"><?php echo get_post_meta($post->ID, 'petstore_page_subtitle', true) ?></h2>
+            <h2 class="page-subtitle"><?php echo get_post_meta($post->ID, 'petfirst_page_subtitle', true) ?></h2>
             
         </div>
         
@@ -73,9 +73,9 @@
 
         <div class="custom-headings-inner">
 
-            <?php if ( get_post_meta( $page_id, 'petstore_page_heading', true ) ) { ?>
+            <?php if ( get_post_meta( $page_id, 'petfirst_page_heading', true ) ) { ?>
 
-            <h1 class="page-title"><span class="entry-title"><?php echo get_post_meta( $page_id, 'petstore_page_heading', true ); ?></span></h1>
+            <h1 class="page-title"><span class="entry-title"><?php echo get_post_meta( $page_id, 'petfirst_page_heading', true ); ?></span></h1>
             
             <?php } else { ?>
 
@@ -83,7 +83,7 @@
           
             <?php } ?>
 
-            <h2 class="page-subtitle"><?php echo get_post_meta($post->ID, 'petstore_page_subtitle', true) ?></h2>
+            <h2 class="page-subtitle"><?php echo get_post_meta($post->ID, 'petfirst_page_subtitle', true) ?></h2>
 
         </div>
 
@@ -148,7 +148,7 @@
             $username = get_userdata( $post->post_author );
             ?>
 
-            <h2 class="page-subtitle"><span class="byline"><?php _e( 'Article by', 'petstore' ); ?> <span class="author vcard"><a class="url fn n" href="<?php echo get_author_posts_url( $post->post_author ); ?>"><?php echo $username->display_name; ?></a></span> on <span><span class="entry-date published updated"><?php the_time( 'F j, Y' ); ?></span></span></span></h2>
+            <h2 class="page-subtitle"><span class="byline"><?php _e( 'Article by', 'petfirst' ); ?> <span class="author vcard"><a class="url fn n" href="<?php echo get_author_posts_url( $post->post_author ); ?>"><?php echo $username->display_name; ?></a></span> on <span><span class="entry-date published updated"><?php the_time( 'F j, Y' ); ?></span></span></span></h2>
 
         </div>
         
@@ -160,7 +160,7 @@
 
         <div class="custom-headings-inner">
 
-            <h1 class="page-title"><span class="entry-title"><?php _e( 'Posts in Category: ', 'petstore' ); ?><?php single_cat_title(); ?></span></h1>
+            <h1 class="page-title"><span class="entry-title"><?php _e( 'Posts in Category: ', 'petfirst' ); ?><?php single_cat_title(); ?></span></h1>
 
         </div>
 
@@ -173,11 +173,11 @@
         <div class="custom-headings-inner">
 
             <?php if ( 'post' === get_post_type() ) {
-            $author_avatar_size = apply_filters( 'petstore_author_avatar_size', 80 );
+            $author_avatar_size = apply_filters( 'petfirst_author_avatar_size', 80 );
                 echo get_avatar( get_the_author_meta( 'ID' ), $author_avatar_size ); 
             } ?>
 
-            <h1 class="page-title"><span class="entry-title"><?php _e( 'Posts by: ', 'petstore' ); ?><?php echo get_the_author(); ?></span></h1>
+            <h1 class="page-title"><span class="entry-title"><?php _e( 'Posts by: ', 'petfirst' ); ?><?php echo get_the_author(); ?></span></h1>
 
         </div>
 
@@ -189,7 +189,7 @@
 
         <div class="custom-headings-inner">
 
-            <h1 class="page-title"><span class="entry-title"><?php _e( '404 - Page not found', 'petstore' ); ?></span></h1>
+            <h1 class="page-title"><span class="entry-title"><?php _e( '404 - Page not found', 'petfirst' ); ?></span></h1>
            
         </div>
 
@@ -201,7 +201,7 @@
 
         <div class="custom-headings-inner">
 
-            <h1 class="page-title"><span class="entry-title"><?php _e( 'Posts Tagged with: ', 'petstore' ); ?><?php single_tag_title(); ?></span></h1>
+            <h1 class="page-title"><span class="entry-title"><?php _e( 'Posts Tagged with: ', 'petfirst' ); ?><?php single_tag_title(); ?></span></h1>
 
         </div>
 
@@ -213,7 +213,7 @@
 
         <div class="custom-headings-inner">
 
-            <h1 class="page-title entry-title"><span class="entry-title"><?php _e('Search Results For: ', 'petstore');?><?php the_search_query() ?></span></h1>
+            <h1 class="page-title entry-title"><span class="entry-title"><?php _e('Search Results For: ', 'petfirst');?><?php the_search_query() ?></span></h1>
 
         </div>
 
@@ -225,7 +225,7 @@
 
         <div class="custom-headings-inner">
 
-            <h1 class="page-title"><span class="entry-title"><?php _e( 'Daily Archives:', 'petstore' ); ?><span class="updated"><?php the_time( 'F jS, Y' ); ?></span></span></h1>
+            <h1 class="page-title"><span class="entry-title"><?php _e( 'Daily Archives:', 'petfirst' ); ?><span class="updated"><?php the_time( 'F jS, Y' ); ?></span></span></h1>
 
         </div>
 
@@ -237,7 +237,7 @@
 
         <div class="custom-headings-inner">
 
-            <h1 class="page-title"><span class="entry-title"><?php _e( 'Monthly Archives:', 'petstore' ); ?><?php single_month_title( ' ', 'petstore' ); ?> <span class="updated"><?php the_time( 'F, Y' ); ?></span></span></h1>
+            <h1 class="page-title"><span class="entry-title"><?php _e( 'Monthly Archives:', 'petfirst' ); ?><?php single_month_title( ' ', 'petfirst' ); ?> <span class="updated"><?php the_time( 'F, Y' ); ?></span></span></h1>
 
         </div>
 
@@ -249,7 +249,7 @@
 
         <div class="custom-headings-inner">
 
-            <h1 class="page-title"><span class="entry-title"><?php _e( 'Yearly Archives:', 'petstore' ); ?><span class="updated"><?php the_time( 'Y' ); ?></span></span></h1>
+            <h1 class="page-title"><span class="entry-title"><?php _e( 'Yearly Archives:', 'petfirst' ); ?><span class="updated"><?php the_time( 'Y' ); ?></span></span></h1>
 
         </div>
         

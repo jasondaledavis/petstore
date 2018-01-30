@@ -1,6 +1,6 @@
 <?php
 /**
- * petstore specific theme functions and definitions
+ * petfirst specific theme functions and definitions
  *
  * Set up the theme and provides some helper functions, which are used in the
  * theme as custom template tags. Others are attached to action and filter
@@ -16,8 +16,8 @@
  * {@link https://codex.wordpress.org/Plugin_API}
  *
  * @package WordPress
- * @subpackage petstore
- * @since petstore 1.0
+ * @subpackage petfirst
+ * @since petfirst 1.0
  */
 //================================================================================//
 // Register WooCommerce and check if activated.
@@ -33,25 +33,25 @@ add_action( 'after_setup_theme', 'woocommerce_support' );
 //================================================================================//
 // Add Title/Subtitle Meta Box to all Pages
 //================================================================================//
-$prefix = 'petstore_';
+$prefix = 'petfirst_';
  
 $meta_box_strapline = array(
     'id' => 'strapline',
-    'title' => __('Custom Header Settings', 'petstore'),
+    'title' => __('Custom Header Settings', 'petfirst'),
     'page' => 'page',
     'context' => 'normal',
     'priority' => 'default',
     'fields' => array(
         array(
-            'name' => __( 'Heading', 'petstore' ),
-            'desc' => __('Enter a header title to appear over your header image<br />(ie; My page title)', 'petstore'),
+            'name' => __( 'Heading', 'petfirst' ),
+            'desc' => __('Enter a header title to appear over your header image<br />(ie; My page title)', 'petfirst'),
             'id' => $prefix . 'page_heading',
             'type' => 'text',
             'std' => ''
         ),
         array(
-            'name' => __( 'Subtitle', 'petstore' ),
-            'desc' => __('Enter a subtitle to appear over your header image<br />(ie; My page subtitle)', 'petstore'),
+            'name' => __( 'Subtitle', 'petfirst' ),
+            'desc' => __('Enter a subtitle to appear over your header image<br />(ie; My page subtitle)', 'petfirst'),
             'id' => $prefix . 'page_subtitle',
             'type' => 'text',
             'std' => ''
@@ -60,16 +60,16 @@ $meta_box_strapline = array(
     )
 );
 
-add_action('admin_menu', 'petstore_add_box_strapline');
+add_action('admin_menu', 'petfirst_add_box_strapline');
 
 //================================================================================//
 //  Callback function to show fields in meta box
 //================================================================================//
-function petstore_show_box_strapline() {
+function petfirst_show_box_strapline() {
     global $meta_box_strapline, $post;
     
     // Use nonce for verification
-    echo '<input type="hidden" name="petstore_add_box_strapline_nonce" value="', wp_create_nonce( basename( __FILE__ ) ), '" />';
+    echo '<input type="hidden" name="petfirst_add_box_strapline_nonce" value="', wp_create_nonce( basename( __FILE__ ) ), '" />';
 
     echo '<table class="form-table">';
         
@@ -136,22 +136,22 @@ function petstore_show_box_strapline() {
     echo '</table>';
 }
 
-add_action( 'save_post', 'petstore_save_data_strapline' );
+add_action( 'save_post', 'petfirst_save_data_strapline' );
 
 //================================================================================//
 //  Add metabox to edit page
 //================================================================================//
-function petstore_add_box_strapline() {
+function petfirst_add_box_strapline() {
     global $meta_box_strapline;
     
-    add_meta_box($meta_box_strapline['id'], $meta_box_strapline['title'], 'petstore_show_box_strapline', $meta_box_strapline['page'], $meta_box_strapline['context'], $meta_box_strapline['priority']);
+    add_meta_box($meta_box_strapline['id'], $meta_box_strapline['title'], 'petfirst_show_box_strapline', $meta_box_strapline['page'], $meta_box_strapline['context'], $meta_box_strapline['priority']);
 }
 // Save data from meta box
-function petstore_save_data_strapline($post_id) {
+function petfirst_save_data_strapline($post_id) {
     global $meta_box_strapline;
 
     // verify nonce
-    if ( !isset($_POST['petstore_add_box_strapline_nonce']) || !wp_verify_nonce($_POST['petstore_add_box_strapline_nonce'], basename(__FILE__))) {
+    if ( !isset($_POST['petfirst_add_box_strapline_nonce']) || !wp_verify_nonce($_POST['petfirst_add_box_strapline_nonce'], basename(__FILE__))) {
         return $post_id;
     }
 
@@ -184,10 +184,10 @@ function petstore_save_data_strapline($post_id) {
 //================================================================================//
 //Search URL Re-Write
 //================================================================================//
-function petstore_change_search_url_rewrite() {
+function petfirst_change_search_url_rewrite() {
     if ( is_search() && ! empty( $_GET['s'] ) ) {
         wp_redirect( home_url( "/search/" ) . urlencode( get_query_var( 's' ) ) );
         exit();
     }    
 }
-add_action( 'template_redirect', 'petstore_change_search_url_rewrite' );
+add_action( 'template_redirect', 'petfirst_change_search_url_rewrite' );

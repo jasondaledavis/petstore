@@ -5,8 +5,8 @@
  * Displays all of the head element and everything up until the "page-content" div.
  *
  * @package WordPress
- * @subpackage petstore
- * @since petstore 1.0
+ * @subpackage petfirst
+ * @since petfirst 1.0
  */
 
 ?>
@@ -14,13 +14,13 @@
 
     <body <?php body_class(); ?> >
     
-    <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'petstore' ); ?></a>
+    <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'petfirst' ); ?></a>
 
         <header id="masthead" class="header-global">
 
             <?php if ( is_active_sidebar( 'topbar-left' ) || is_active_sidebar( 'topbar-right' ) )  : ?>
 
-            <div id="petstore-topbar">
+            <div id="petfirst-topbar">
                 
                 <div class="grid">
 
@@ -50,7 +50,7 @@
 
                 </div><!-- end .grid -->
 
-            </div><!-- end #petstore-topbar -->
+            </div><!-- end #petfirst-topbar -->
 
             <?php endif; ?>
 
@@ -58,15 +58,15 @@
 
                 <?php
                     /**
-                     * Filter the default petstore custom header sizes attribute.
+                     * Filter the default petfirst custom header sizes attribute.
                      *
-                     * @since petstore 1.0
+                     * @since petfirst 1.0
                      *
                      * @param string $custom_header_sizes sizes attribute
                      * for Custom Header. Default '(max-width: 709px) 85vw,
                      * (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px'.
                      */
-                    $custom_header_sizes = apply_filters( 'petstore_custom_header_sizes', '(max-width: 709px) 85vw, (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px' );
+                    $custom_header_sizes = apply_filters( 'petfirst_custom_header_sizes', '(max-width: 709px) 85vw, (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px' );
                 ?>
 
             <div class="header-top" style="background:url('<?php header_image(); ?>')">
@@ -85,7 +85,7 @@
                         
                             <div class="logo">
 
-                                <?php petstore_the_custom_logo(); ?>
+                                <?php petfirst_the_custom_logo(); ?>
 
                                 <?php if ( display_header_text() ) {
        
@@ -118,11 +118,11 @@
 
                                     <?php if ( has_nav_menu( 'primary' ) ) : ?>
                                     
-                                    <button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'petstore' ); ?></button>
+                                    <button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'petfirst' ); ?></button>
 
                                     <div id="site-header-menu" class="site-header-menu">
                                     
-                                        <nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'petstore' ); ?>">
+                                        <nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'petfirst' ); ?>">
 
                                             <?php
                                                 wp_nav_menu( array(

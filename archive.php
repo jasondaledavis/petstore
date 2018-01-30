@@ -12,8 +12,8 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
- * @subpackage petstore
- * @since petstore 1.0
+ * @subpackage petfirst
+ * @since petfirst 1.0
  */
 
 get_header(); ?>
@@ -48,9 +48,9 @@ get_header(); ?>
 
                     // Previous/next page navigation.
                     the_posts_pagination( array(
-                        'prev_text'          => __( '', 'petstore' ),
-                        'next_text'          => __( '', 'petstore' ),
-                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'petstore' ) . ' </span>',
+                        'prev_text'          => __( '', 'petfirst' ),
+                        'next_text'          => __( '', 'petfirst' ),
+                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'petfirst' ) . ' </span>',
                     ) );
 
                 // If no content, include the "No posts found" template.
