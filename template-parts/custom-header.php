@@ -9,7 +9,7 @@
 ?>
 <div class="custom-header">
 
-<div class="header-pattern"></div>
+    <div class="custom-headings-inner">
 
     <?php 
 
@@ -18,13 +18,19 @@
 
         if ( has_post_thumbnail() ) {
 
-         the_post_thumbnail( 'header-image', array( 'alt' => the_title_attribute( 'echo=0' ), 'class' => "custom-header-image" ) ); 
+        // leave this and for just an image use post thumbnail function or default to an image with the else statement
+        the_post_thumbnail( 'header-image', array( 'alt' => the_title_attribute( 'echo=0' ), 'class' => "custom-header-image" ) ); 
 
         } else {  
             $image = get_template_directory_uri() .'/assets/img/header_placeholder.png'; 
             $alt = get_bloginfo( 'description' );
             echo '<img src="'.$image.'" alt="'.$alt.'" />';
         }
+
+        // } elseif ( get_post_meta( $page_id, '(enter custom field name here)', true ) ) {
+            // custom fields template calls will go here
+            // get_template_part( 'template-parts/content', 'cta' );
+        // }
 
     // If the current page is the posts index page
     } else if ( is_home() ) {
@@ -42,28 +48,23 @@
        
     } ?>
 
-    <?php if ( is_page() ) { ?>
+    </div><!-- end .custom-headings-inner -->
 
-    <div class="custom-headings">
+</div><!-- end .custom-header -->
 
-        <div class="custom-headings-inner">
+    <?php //if ( is_page() ) { ?>
 
-            <?php if ( get_post_meta( $post->ID, 'petfirst_page_heading', true ) ) { ?>
+    <!-- <div class="custom-headings"> -->
 
-            <h1 class="page-title"><span class="entry-title"><?php echo get_post_meta($post->ID, 'petfirst_page_heading', true) ?></span></h1>
+        <!-- <div class="custom-headings-inner"> -->
 
-            <?php } else { ?>
 
-            <h1 class="page-title"><span class="entry-title"><?php the_title(); ?></span></h1>
-            <?php } ?>
-
-            <h2 class="page-subtitle"><?php echo get_post_meta($post->ID, 'petfirst_page_subtitle', true) ?></h2>
             
-        </div>
+        <!-- </div> -->
         
-    </div><!-- end .custom-headings -->
+  <!--   </div> --><!-- end .custom-headings -->
 
-    <?php } elseif ( is_front_page() || is_home() ) { ?>
+    <?php if ( is_front_page() || is_home() ) { ?>
 
     <?php
     $page_id = ( 'page' == get_option( 'show_on_front' ) ? get_option( 'page_for_posts' ) : get_the_ID );
@@ -87,50 +88,6 @@
 
         </div>
 
-    </div><!-- end .custom-headings -->
-
-    <?php } elseif ( class_exists( 'WooCommerce' ) && is_woocommerce() && is_shop() ) { ?>
-
-    <div class="custom-headings">
-
-        <div class="custom-headings-inner"> 
-
-        <?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-
-            <h1 class="page-title"><span class="entry-title"><?php woocommerce_page_title(); ?></span></h1>
-
-        <?php endif; ?>
-
-        </div>
-        
-    </div><!-- end .custom-headings -->
-
-    <?php } elseif ( class_exists( 'WooCommerce' ) && is_product_category() ) { ?>
-
-    <div class="custom-headings">
-
-        <div class="custom-headings-inner"> 
-
-        <?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-
-            <h1 class="page-title">Product Category: <span class="entry-title"><?php woocommerce_page_title(); ?></span></h1>
-
-        <?php endif; ?>
-
-        </div>
-        
-    </div><!-- end .custom-headings -->
-
-    <?php } elseif ( class_exists( 'WooCommerce' ) && is_product() ) { ?>
-
-    <div class="custom-headings">
-
-        <div class="custom-headings-inner"> 
-
-            <h1 class="page-title"><span class="entry-title"><?php the_title(); ?></span></h1>
-
-        </div>
-        
     </div><!-- end .custom-headings -->
 
     <?php } elseif ( is_single() ) { ?>

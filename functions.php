@@ -24,7 +24,9 @@
  * @subpackage petfirst
  * @since Twenty Sixteen 1.4
  */
- 
+
+// remove_filter( 'the_content', 'wpautop' );
+// remove_filter( 'the_excerpt', 'wpautop' );
 //================================================================================//
 // Register the themes custom functions and supporting files/directories
 //================================================================================//
@@ -90,25 +92,6 @@ function petfirst_setup() {
       'flex-width' => true,
       'header-selector' => '.site-title a',
     ) );
-
-    // Gutenberg Support
-    // add_theme_support( 'gutenberg', array(
-    //   'wide-images' => true,
-    //   'colors' => array(
-    //     '#0073aa',
-    //     '#229fd8',
-    //     '#eee',
-    //     '#444',
-    //   ), 
-
-    // ) );
-
-    add_theme_support( 'editor-color-palette',
-        '#a156b4',
-        '#d0a5db',
-        '#eee',
-        '#444'
-    );
 
     /*
     * Enable support for Post Thumbnails on posts and pages.
@@ -186,16 +169,6 @@ function petfirst_widgets_init() {
     'before_title' => '<h4 class="widget-title">',
     'after_title' => '</h4>',
   ) );
-
-  // register_sidebar( array(
-  //   'name' => __('Page Sidebar', 'petfirst' ),
-  //   'id' => 'sidebar-page',
-  //   'description'   => __( 'Add widgets here to appear in your pages sidebar.', 'petfirst' ),
-  //   'before_widget' => '<div id="%1$s" class="widget %2$s">',
-  //   'after_widget' => "</div>",
-  //   'before_title' => '<h4 class="widget-title">',
-  //   'after_title' => '</h4>',
-  // ) );
 
   register_sidebar( array(
     'name' => __('Footer Sidebar 1', 'petfirst' ),
@@ -287,20 +260,6 @@ function petfirst_widgets_init() {
     'after_title' => '</h4>',
   ) );
 
-  if ( class_exists( 'WooCommerce' ) ) {
-                 
-    register_sidebar( array(
-    'name' => __('Shop Sidebar', 'petfirst' ),
-    'id'   => 'sidebar-shop',
-    'description'   => __( 'Add widgets here to appear in your shop and products pages sidebar.', 'petfirst' ),
-    'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    'after_widget'  => '</div>',
-    'before_title' => '<h4 class="widget-title">',
-    'after_title' => '</h4>',
-    ) );
-
-  } //end woo if
-
 }
 
 add_action( 'widgets_init', 'petfirst_widgets_init' );
@@ -373,9 +332,6 @@ function petfirst_scripts() {
   wp_enqueue_style( 'petfirst-style', get_stylesheet_uri() );
 
   // Gutenberg stylesheet.
-  // wp_enqueue_style( 'petfirst-gutes', get_template_directory_uri() . '/assets/css/gutes.css');
-
-  // Gutenberg stylesheet.
   wp_enqueue_style( 'petfirst-main', get_template_directory_uri() . '/main.css');
 
   // Add custom fonts, used in the main stylesheet.
@@ -403,6 +359,9 @@ function petfirst_scripts() {
   
   // Enqueue Scripts
   wp_enqueue_script( 'petfirst-script', get_template_directory_uri() . '/assets/js/min/custom-functions.min.js', array( 'jquery' ), '20160816', true );
+
+  // Add FortAwesome
+  wp_enqueue_script( 'fortawesome', '//use.fortawesome.com/a789a9d9.js', '20160816', true);
   
 
   wp_localize_script( 'petfirst-script', 'screenReaderText', array(
@@ -565,30 +524,3 @@ function petfirst_widget_tag_cloud_args( $args ) {
 }
 
 add_filter( 'widget_tag_cloud_args', 'petfirst_widget_tag_cloud_args' );
-
-
-/**
-* Modifies the content editor to add instructions for the end users or content editors.
-*
-* @since petfirst 1.0
-*
-*/
-// add_action( 'edit_form_top', function( $post ) 
-// {
-//     echo '<h3 style="color:#333">Enter Your Page Title Below:</h3>';
-// });
-// add_action( 'edit_form_after_title', function( $post ) 
-// {
-//     echo '<h3 style="color:#333">Edit the content on the page here:</h3>';
-// });
-
-// add_action( 'edit_form_after_editor', function( $post ) 
-// {
-//     echo '<h3 style="color:#333">Enter below the alternate page title and add a subtitle:</h3>';
-// });
-
-// add_action( 'edit_page_form', function( $post ) 
-// {
-//     // edit_page_form is ONLY for pages, the other is for the rest of post types
-//     echo '<h1 style="color:#333">edit_page_form/edit_form_advanced</h1>';
-// });

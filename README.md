@@ -51,3 +51,11 @@ Source: <a href="https://github.com/aFarkas/html5shiv">https://github.com/aFarka
 
 = 1.1 =
 * Header CSS added, new header.php code written by Alex. 
+
+= 1.2 =
+* Created new functions for header.php for head.
+* added Display post thumbnail meta box including description in theme-function.php. 
+* extra <p> tags were appearing around content, I removed the directories and files creating this.
+* revised custom-header.php in template dir for new way to display page titles and CTAs.
+* revised page.php to move page titles to file.
+* added comments throughout code.

@@ -17,7 +17,16 @@ get_header(); ?>
 
         <div class="row">
 
-            <div class="c12">
+            <div class="c6">
+
+            	<?php if ( get_post_meta( $post->ID, 'petfirst_page_heading', true ) ) { ?>
+	            <!-- this is the custom page title -->
+	            <h1 class="page-title"><span class="entry-title"><?php echo get_post_meta($post->ID, 'petfirst_page_heading', true) ?></span></h1>
+
+	            <?php } else { ?>
+	            <!-- this is the WordPress default page title  -->
+	            <h1 class="page-title"><span class="entry-title"><?php the_title(); ?></span></h1>
+	            <?php } ?>
 
 				<?php
 					// Start the loop.
@@ -26,16 +35,21 @@ get_header(); ?>
 						// Include the page content template.
 						get_template_part( 'template-parts/content', 'page' );
 
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) {
-							comments_template();
-						}
-
 						// End of the loop.
 					endwhile;
 				?>
+				
+				<!-- this is the CTA that appears below the content area -->
+				<h2 class="page-subtitle"><?php echo get_post_meta($post->ID, 'petfirst_page_subtitle', true) ?></h2>
 
-			</div><!-- end .c9 or .c12 -->
+			</div><!-- end .c6 -->
+
+			<div class="c6">
+
+				<?php get_template_part( 'template-parts/custom', 'header' ); ?>
+
+			</div>
+
 
         </div><!-- end .row -->
 

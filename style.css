@@ -4,7 +4,7 @@ Theme URI: https://molecule.element502.com
 Author: Blackstone Media
 Author URI: http://blackstonemedia.com
 Description: none.
-Version: 1.1
+Version: 1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -1771,7 +1771,8 @@ blockquote:after,
     margin: 0;
     padding: 0;
     position: relative;
-    max-height: 300px;
+    /*max-height: 300px;*/
+    height: auto;
     overflow: hidden;
 }
 .custom-header-image {
@@ -1810,14 +1811,14 @@ blockquote:after,
 }
 .page-title,
 span.entry-title {
-    text-align: center;
+    /*text-align: center;*/
     font-weight: normal;
     font-family: 'Fira Sans', 'Open Sans', 'Arial', sans-serif;
     font-size: 28px;
     font-size: 1em;
     font-weight: normal;
     line-height: 1.25;
-    margin-bottom: 1em;
+    /*margin-bottom: 1em;*/
     color: #1a1a1a;
 }
 .page-title a,

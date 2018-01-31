@@ -145,13 +145,3 @@ function petfirst_customize_preview_js() {
 	wp_enqueue_script( 'petfirst-customize-preview', get_template_directory_uri() . '/assets/js/min/customize-preview-min.js', array( 'customize-preview' ), '20160816', true );
 }
 add_action( 'customize_preview_init', 'petfirst_customize_preview_js' );
-
-// add_action( "customize_register", "petfirst_theme_customize_register" );
-// function petfirst_theme_customize_register( $wp_customize ) {
-
- //=============================================================
- // Remove Colors, Background image, and Static front page 
- // option from theme customizer     
- //=============================================================
-//  $wp_customize->remove_section("colors");
-// }

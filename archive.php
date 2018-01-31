@@ -18,7 +18,7 @@
 
 get_header(); ?>
 
-    <div class="grid wfull">
+    <div class="grid">
 
         <div class="row">
 

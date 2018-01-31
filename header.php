@@ -8,17 +8,7 @@
  * @subpackage petfirst
  * @since petfirst 1.0
  */
-
-?>
-<!doctype html>
-<html  lang="en"<?php //language_attributes(); ?>>
-<head>
-	<meta charset="utf-8<?php //bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<?php wp_head(); ?>
-    <script src="https://use.fortawesome.com/a789a9d9.js"></script>
-</head>
+get_template_part( 'template-parts/head', 'meta' ); ?> <!-- this is the <head> stack -->
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
@@ -94,4 +84,4 @@
     </div>
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content">
+	<div id="content" class="page-content site-content">

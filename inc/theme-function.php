@@ -20,15 +20,17 @@
  * @since petfirst 1.0
  */
 //================================================================================//
-// Register WooCommerce and check if activated.
+/* Display post thumbnail meta box including description */
 //================================================================================//
-if ( ! function_exists( 'is_woocommerce_activated' ) ) {
-    function woocommerce_support() {
-        add_theme_support( 'woocommerce' );
-    }
-}
+add_filter( 'admin_post_thumbnail_html', 'petfirst_thumbnail_add_description', 10, 2 );
 
-add_action( 'after_setup_theme', 'woocommerce_support' );
+function petfirst_thumbnail_add_description( $content, $post_id ){
+$post = get_post( $post_id );
+$post_type = $post->post_type;
+    $content .= "<p><label for=\"html\">Add a hero image here to right of your pages content.</label></p>";
+    return $content;
+    return $post_id;
+}
 
 //================================================================================//
 // Add Title/Subtitle Meta Box to all Pages
@@ -37,21 +39,21 @@ $prefix = 'petfirst_';
  
 $meta_box_strapline = array(
     'id' => 'strapline',
-    'title' => __('Custom Header Settings', 'petfirst'),
+    'title' => __('Custom Page Content Settings', 'petfirst'),
     'page' => 'page',
     'context' => 'normal',
     'priority' => 'default',
     'fields' => array(
         array(
-            'name' => __( 'Heading', 'petfirst' ),
-            'desc' => __('Enter a header title to appear over your header image<br />(ie; My page title)', 'petfirst'),
+            'name' => __( 'Page Title Heading', 'petfirst' ),
+            'desc' => __('Enter a new page title that is different from the original name.<br />(ie; My page title)', 'petfirst'),
             'id' => $prefix . 'page_heading',
             'type' => 'text',
             'std' => ''
         ),
         array(
-            'name' => __( 'Subtitle', 'petfirst' ),
-            'desc' => __('Enter a subtitle to appear over your header image<br />(ie; My page subtitle)', 'petfirst'),
+            'name' => __( 'Call To Action', 'petfirst' ),
+            'desc' => __('Enter a CTA to appear below the main content besides the hero area.<br />(ie; image, video, CTA.)', 'petfirst'),
             'id' => $prefix . 'page_subtitle',
             'type' => 'text',
             'std' => ''
