@@ -12,7 +12,7 @@ get_template_part( 'template-parts/head', 'meta' ); ?> <!-- this is the <head> s
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<!-- <a class="skip-link screen-reader-text" href="#content"><?php //esc_html_e( 'Skip to content', 'petfirst' ); ?></a> -->
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'petfirst' ); ?></a>
 
 	<header id="masthead" class="site-header">
 
@@ -20,13 +20,14 @@ get_template_part( 'template-parts/head', 'meta' ); ?> <!-- this is the <head> s
     <div class="top-nav">
       <div class="top-nav-inner flex-row">
         <nav>
-					<ul>
-	          <li><a class="" href="tel:18552707387" title="">855.270.7387</a></li>
-	          <li><a class="" href="#" title="">Contact Us</a></li>
-	          <li><a class="" href="#" title="">Partnerships</a></li>
-	          <li><a class="" href="#" title="">About Us</a></li>
-	          <li><a class="" href="#" title="">MyPets Login</a></li>
-					</ul>
+
+          <?php
+              wp_nav_menu( array(
+               'theme_location' => 'topnav',
+               'menu_id'        => 'top-nav',
+              ) );
+            ?>
+            
         </nav>
         <a class="search" href="#" title=""><i class="fa fa-search"></i></a>
       </div>
@@ -44,37 +45,22 @@ get_template_part( 'template-parts/head', 'meta' ); ?> <!-- this is the <head> s
 
         <div class="site-branding">
 
-    			<?php
-    			// the_custom_logo();
-    			// if ( is_front_page() && is_home() ) : ?>
-    				<!-- <h1 class="site-title">-->
-            <a class="logo" href="#<?php //echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri();?>/images/logo-temporary.png" alt="Pet first logo"><?php //bloginfo( 'name' ); ?></a>
-          <!--</h1> -->
-    			<?php //else : ?>
-    				<!-- <p class="site-title"><a href="#<?php //echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="logo" alt="Pet first logo"><?php //bloginfo( 'name' ); ?></a></p> -->
-    			<?php
-    			//endif;
-
-    			//$description = get_bloginfo( 'description', 'display' );
-    			//if ( $description || is_customize_preview() ) : ?>
-    				<!-- <p class="site-description"><?php //echo $description; /* WPCS: xss ok. */ ?></p> -->
-    			<?php
-    			//endif; ?>
+          <a class="logo" href="#<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri();?>/images/logo-temporary.png" alt="Pet first logo"></a>
+          
     		</div><!-- .site-branding -->
 
         <div class="nav-side flex-row">
       		<nav id="site-navigation" class="standard-nav main-navigation">
-            <a class="" href="#">Pet Insurance</a>
+            <!-- <a class="" href="#">Pet Insurance</a>
             <a class="" href="#">Customer Support</a>
             <a class="" href="#">Resources</a>
-            <a class="" href="#">Blog</a>
-      			<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php //esc_html_e( 'Primary Menu', 'petfirst' ); ?></button> -->
+            <a class="" href="#">Blog</a> -->
       			<?php
-      				// wp_nav_menu( array(
-      				// 	'theme_location' => 'menu-1',
-      				// 	'menu_id'        => 'primary-menu',
-      				// ) );
-      			?>
+                wp_nav_menu( array(
+                    'theme_location' => 'primary',
+                    'menu_class'     => 'primary-menu',
+                 ) );
+            ?>
       		</nav><!-- #site-navigation -->
           <a class="btn-lg btn-primary quote-btn-lg" style="display:none;" href="#"> Get a Free Quote</a>
 					<a class="btn-lg btn-primary quote-btn-md" style="display:none;" href="#"> Get Free Quote</a>

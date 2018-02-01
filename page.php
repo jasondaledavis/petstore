@@ -25,6 +25,7 @@ get_header(); ?>
 
 	            <?php } else { ?>
 	            <!-- this is the WordPress default page title  -->
+	            
 	            <h1 class="page-title"><span class="entry-title"><?php the_title(); ?></span></h1>
 	            <?php } ?>
 

@@ -107,6 +107,7 @@ function petfirst_setup() {
     // This theme uses wp_nav_menu() in two locations.
     register_nav_menus( array(
       'primary' => __( 'Primary Menu', 'petfirst' ),
+      'topnav' => __( 'Top Nav Menu', 'petfirst' ),
       'footernav' => __( 'Footer Menu', 'petfirst' ),
       'footernavterms' => __( 'Footer Terms Menu', 'petfirst' ),
     ) );
@@ -147,7 +148,7 @@ add_action( 'after_setup_theme', 'petfirst_setup' );
 * @since petfirst 1.0
 */
 function petfirst_content_width() {
-    $GLOBALS['content_width'] = apply_filters( 'petfirst_content_width', 840 );
+    $GLOBALS['content_width'] = apply_filters( 'petfirst_content_width', 1200 );
 }
 add_action( 'after_setup_theme', 'petfirst_content_width', 0 );
 
@@ -221,6 +222,16 @@ function petfirst_widgets_init() {
   ) );
 
   register_sidebar( array(
+    'name' => __('Footer Sidebar 6', 'petfirst' ),
+    'id' => 'sidebar-footer-6',
+    'description'   => __( 'Add widgets here to appear in your footer sidebar column five.', 'petfirst' ),
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget' => "</div>",
+    'before_title' => '<h4 class="widget-title">',
+    'after_title' => '</h4>',
+  ) );
+
+  register_sidebar( array(
     'name' => __('Footer CTA', 'petfirst' ),
     'id' => 'sidebar-footer-cta',
     'description'   => __( 'This is for your CTA in the footer centered in the row above footer nav.', 'petfirst' ),
@@ -240,25 +251,25 @@ function petfirst_widgets_init() {
     'after_title' => '</h4>',
   ) );
 
-  register_sidebar( array(
-    'name' => __('Top Sidebar Left', 'petfirst' ),
-    'id' => 'topbar-left',
-    'description'   => __( 'Add widgets here to appear in above your header in a sidebar on the left.', 'petfirst' ),
-    'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    'after_widget' => "</div>",
-    'before_title' => '<h4 class="widget-title">',
-    'after_title' => '</h4>',
-  ) );
+  // register_sidebar( array(
+  //   'name' => __('Top Sidebar Left', 'petfirst' ),
+  //   'id' => 'topbar-left',
+  //   'description'   => __( 'Add widgets here to appear in above your header in a sidebar on the left.', 'petfirst' ),
+  //   'before_widget' => '<div id="%1$s" class="widget %2$s">',
+  //   'after_widget' => "</div>",
+  //   'before_title' => '<h4 class="widget-title">',
+  //   'after_title' => '</h4>',
+  // ) );
 
-  register_sidebar( array(
-    'name' => __('Top Sidebar Right', 'petfirst' ),
-    'id' => 'topbar-right',
-    'description'   => __( 'Add widgets here to appear in above your header in a sidebar on the right.', 'petfirst' ),
-    'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    'after_widget' => "</div>",
-    'before_title' => '<h4 class="widget-title">',
-    'after_title' => '</h4>',
-  ) );
+  // register_sidebar( array(
+  //   'name' => __('Top Sidebar Right', 'petfirst' ),
+  //   'id' => 'topbar-right',
+  //   'description'   => __( 'Add widgets here to appear in above your header in a sidebar on the right.', 'petfirst' ),
+  //   'before_widget' => '<div id="%1$s" class="widget %2$s">',
+  //   'after_widget' => "</div>",
+  //   'before_title' => '<h4 class="widget-title">',
+  //   'after_title' => '</h4>',
+  // ) );
 
 }
 
@@ -397,7 +408,7 @@ function petfirst_body_classes( $classes ) {
   }
 
   // Adds a class of no-sidebar to sites without active sidebar.
-  if ( ! is_active_sidebar( 'sidebar-blog', 'sidebar-page', 'sidebar-footer-1', 'sidebar-footer-2', 'sidebar-footer-3', 'sidebar-footer-4', 'sidebar-footer-5', 'sidebar-footer-terms', 'sidebar-footer-cta', 'topbar-left', 'topbar-right' ) ) {
+  if ( ! is_active_sidebar( 'sidebar-blog', 'sidebar-page', 'sidebar-footer-1', 'sidebar-footer-2', 'sidebar-footer-3', 'sidebar-footer-4', 'sidebar-footer-5', 'sidebar-footer-6','sidebar-footer-terms', 'sidebar-footer-cta', 'topbar-left', 'topbar-right' ) ) {
     
     $classes[] = 'no-sidebar';
   
