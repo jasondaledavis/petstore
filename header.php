@@ -84,4 +84,4 @@ get_template_part( 'template-parts/head', 'meta' ); ?> <!-- this is the <head> s
     </div>
 	</header><!-- #masthead -->
 
-	<div id="content" class="page-content site-content">
+	<div id="content" class="site-content">
