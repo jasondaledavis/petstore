@@ -55,4 +55,24 @@ get_header(); ?>
 
     </div><!-- end .grid -->
 
+    <div class="grid">
+
+	    <div class="row">
+
+	        <div class="c9">
+
+	        	<?php echo get_post_meta($post->ID, 'content_editor_below_hero_row', true) ?>
+
+	        </div>
+
+	        <div class="c3">
+
+	        	<?php echo get_post_meta($post->ID, 'content_editor_below_hero_row_cta', true) ?>
+
+	        </div>
+
+	    </div><!-- end .row -->
+
+    </div><!-- end .grid -->
+
 <?php get_footer(); ?>
