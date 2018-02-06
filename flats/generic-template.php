@@ -39,3 +39,4 @@
 
 
 <?php include 'footer.php' ?>
+<?php include 'bottom-navigation.php' ?>

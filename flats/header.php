@@ -33,7 +33,7 @@
 		<div class="main-nav bg-white">
       <div class="main-nav-inner flex-row">
 
-				<div class="mobile-contact-buttons">
+				<div class="mobile-contact-buttons hide-on-desktop hide-on-tablet-landscape">
 					<a href="tel:18552707387"><i class="fa fa-phone"></i></a>
 					<a href="#"><i class="fa fa-home"></i></a>
 				</div>
