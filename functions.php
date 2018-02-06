@@ -25,8 +25,6 @@
  * @since Twenty Sixteen 1.4
  */
 
-// remove_filter( 'the_content', 'wpautop' );
-// remove_filter( 'the_excerpt', 'wpautop' );
 //================================================================================//
 // Register the themes custom functions and supporting files/directories
 //================================================================================//
@@ -167,8 +165,8 @@ function petfirst_widgets_init() {
     'description'   => __( 'Add widgets here to appear in your blog posts and page sidebar.', 'petfirst' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => "</div>",
-    'before_title' => '<h4 class="widget-title">',
-    'after_title' => '</h4>',
+    'before_title' => '<h6 class="widget-title">',
+    'after_title' => '</h6>',
   ) );
 
   register_sidebar( array(
@@ -177,8 +175,8 @@ function petfirst_widgets_init() {
     'description'   => __( 'Add widgets here to appear in your footer sidebar column one.', 'petfirst' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => "</div>",
-    'before_title' => '<h4 class="widget-title">',
-    'after_title' => '</h4>',
+    'before_title' => '<h6 class="widget-title">',
+    'after_title' => '</h6>',
   ) );
 
   register_sidebar( array(
@@ -187,8 +185,8 @@ function petfirst_widgets_init() {
     'description'   => __( 'Add widgets here to appear in your footer sidebar column two.', 'petfirst' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => "</div>",
-    'before_title' => '<h4 class="widget-title">',
-    'after_title' => '</h4>',
+    'before_title' => '<h6 class="widget-title">',
+    'after_title' => '</h6>',
   ) );
 
   register_sidebar( array(
@@ -197,8 +195,8 @@ function petfirst_widgets_init() {
     'description'   => __( 'Add widgets here to appear in your footer sidebar column three.', 'petfirst' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => "</div>",
-    'before_title' => '<h4 class="widget-title">',
-    'after_title' => '</h4>',
+    'before_title' => '<h6 class="widget-title">',
+    'after_title' => '</h6>',
   ) );
 
   register_sidebar( array(
@@ -207,8 +205,8 @@ function petfirst_widgets_init() {
     'description'   => __( 'Add widgets here to appear in your footer sidebar column four.', 'petfirst' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => "</div>",
-    'before_title' => '<h4 class="widget-title">',
-    'after_title' => '</h4>',
+    'before_title' => '<h6 class="widget-title">',
+    'after_title' => '</h6>',
   ) );
 
   register_sidebar( array(
@@ -217,8 +215,8 @@ function petfirst_widgets_init() {
     'description'   => __( 'Add widgets here to appear in your footer sidebar column five.', 'petfirst' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => "</div>",
-    'before_title' => '<h4 class="widget-title">',
-    'after_title' => '</h4>',
+    'before_title' => '<h6 class="widget-title">',
+    'after_title' => '</h6>',
   ) );
 
   register_sidebar( array(
@@ -227,8 +225,8 @@ function petfirst_widgets_init() {
     'description'   => __( 'Add widgets here to appear in your footer sidebar column five.', 'petfirst' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => "</div>",
-    'before_title' => '<h4 class="widget-title">',
-    'after_title' => '</h4>',
+    'before_title' => '<h6 class="widget-title">',
+    'after_title' => '</h6>',
   ) );
 
   register_sidebar( array(
@@ -237,8 +235,8 @@ function petfirst_widgets_init() {
     'description'   => __( 'This is for your CTA in the footer centered in the row above footer nav.', 'petfirst' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => "</div>",
-    'before_title' => '<h4 class="widget-title">',
-    'after_title' => '</h4>',
+    'before_title' => '<h6 class="widget-title">',
+    'after_title' => '</h6>',
   ) );
 
   register_sidebar( array(
@@ -247,29 +245,9 @@ function petfirst_widgets_init() {
     'description'   => __( 'This is for your Terms in the footer centered in the row below footer nav.', 'petfirst' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => "</div>",
-    'before_title' => '<h4 class="widget-title">',
-    'after_title' => '</h4>',
+    'before_title' => '<h6 class="widget-title">',
+    'after_title' => '</h6>',
   ) );
-
-  // register_sidebar( array(
-  //   'name' => __('Top Sidebar Left', 'petfirst' ),
-  //   'id' => 'topbar-left',
-  //   'description'   => __( 'Add widgets here to appear in above your header in a sidebar on the left.', 'petfirst' ),
-  //   'before_widget' => '<div id="%1$s" class="widget %2$s">',
-  //   'after_widget' => "</div>",
-  //   'before_title' => '<h4 class="widget-title">',
-  //   'after_title' => '</h4>',
-  // ) );
-
-  // register_sidebar( array(
-  //   'name' => __('Top Sidebar Right', 'petfirst' ),
-  //   'id' => 'topbar-right',
-  //   'description'   => __( 'Add widgets here to appear in above your header in a sidebar on the right.', 'petfirst' ),
-  //   'before_widget' => '<div id="%1$s" class="widget %2$s">',
-  //   'after_widget' => "</div>",
-  //   'before_title' => '<h4 class="widget-title">',
-  //   'after_title' => '</h4>',
-  // ) );
 
 }
 

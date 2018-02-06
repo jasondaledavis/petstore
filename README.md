@@ -3,7 +3,7 @@
 * Author: Jason Davis
 * Requires at least: WordPress 4.7+
 * Tested up to: WordPress 4.9+
-* Version: 1.3.1
+* Version: 1.3.2
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -69,3 +69,11 @@ Source: <a href="https://github.com/aFarkas/html5shiv">https://github.com/aFarka
 = 1.3.1 =
 * Page template modifications for footer.php and page.php
 * Uploaded new main.css from Alex for footer and pages
+
+= 1.3.2 =
+* Added revised code for header.php
+* Added revised code page.php
+* Cleaned up code in footer.php, functions.php
+* Added comments to page.php
+* uploaded revised main.css (2-6-18)
+* Revised widget title tags in footer to h6 from h4
