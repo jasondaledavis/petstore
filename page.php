@@ -54,7 +54,7 @@ endwhile;
 
 <div class="flex-col-sm-6 fullbleed-image">
 
-<?php get_template_part( 'template-parts/custom', 'header' ); ?>
+<img src="<?php echo get_template_directory_uri();?>/assets/img/header_placeholder.png" alt="">
 
 </div><!-- end .flex-col-sm-6 -->
 
