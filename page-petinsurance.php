@@ -23,7 +23,7 @@ get_header(); ?>
         <!-- this is the WordPress default page title  -->
 <h1 class="page-title"><span class="entry-title"><?php the_title(); ?></span></h1>
 
-<?php query_posts( array( 'post_status' => 'publish' , 'post_type' => array( 'pet_insurance' )  ) ); ?>
+<?php //query_posts( array( 'post_status' => 'publish' , 'post_type' => array( 'pet_insurance' )  ) ); ?>
 <?php
 // Start the loop.
 while ( have_posts() ) : the_post();
@@ -42,6 +42,24 @@ endwhile;
       </div>
 
       <div class="flex-col-sm-6 fullbleed-image hero-image" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/img/Hero-Image-Pet-Insurance.jpg);">
+
+
+<?php 
+ 
+// $mood = get_post_meta($post->ID, 'Mood', true);
+ 
+// if ($mood) { ?>
+ 
+<!-- // <p>Today's Mood: <? //echo $mood; ?></p> -->
+ 
+<?php 
+ 
+// } else { 
+// // do nothing; 
+// }
+ 
+?>
+
 
         <div class="hero-cta">
           <span class="med-circle-icon"><i class="fa fa-dog-face"></i></span>
@@ -296,14 +314,33 @@ endwhile;
         <h3 class="bold text-primary">What's Covered</h3>
         <div class="checkboxes flex-row">
           <div class="flex-col-sm-6">
-            <ul >
-              <li><i class="fa fa-check text-accent"></i> Accidents</li>
+
+
+<?php 
+$covered_item = get_post_meta($post->ID, 'covered_item', false);
+if( count( $covered_item ) != 0 ) { ?>
+
+<ul>
+<?php //foreach($mood as $covered_item) {
+            echo '<li><i class="fa fa-check text-accent"></i>'.$covered_item.'</li>';
+            }
+            ?>
+</ul>
+<?php 
+} else { 
+// do nothing; 
+}
+?>
+
+
+            <!-- <ul >
+              <li><i class="fa fa-check text-accent"></i> Accidents</li> 
               <li><i class="fa fa-check text-accent"></i> Illnesses (incl. hereditary, congenital, &amp; chronic conditions)</li>
               <li><i class="fa fa-check text-accent"></i> Hospitalizations</li>
               <li><i class="fa fa-check text-accent"></i> Surgeries</li>
               <li><i class="fa fa-check text-accent"></i> Diagnostic Tests</li>
               <li><i class="fa fa-check text-accent"></i> Exam Fees</li>
-            </ul>
+            </ul> -->
           </div>
           <div class="flex-col-sm-6">
             <ul>

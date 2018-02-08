@@ -44,9 +44,23 @@ endwhile;
 
 </div><!-- end .flex-col-sm-6 -->
 
-<div class="flex-col-sm-6 fullbleed-image">
-
-<img src="<?php echo get_template_directory_uri();?>/assets/img/header_placeholder.png" alt="">
+<div class="flex-col-sm-6 fullbleed-image hero-image" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/img/Hero-Image-Pet-Insurance.jpg);">
+<?php 
+ 
+// $mood = get_post_meta($post->ID, 'Mood', true);
+ 
+// if ($mood) { ?>
+ 
+<!-- // <p>Today's Mood: <? //echo $mood; ?></p> -->
+ 
+<?php 
+ 
+// } else { 
+// // do nothing; 
+// }
+ 
+?>
+<!-- <img src="<?php //echo get_template_directory_uri();?>/assets/img/header_placeholder.png" alt=""> -->
 
 </div><!-- end .flex-col-sm-6 -->
 
