@@ -311,7 +311,7 @@ endwhile;
 
       <!-- left side -->
       <div class="side-by-side">
-        <h3 class="bold text-primary">What's Covered</h3>
+        <h3 class="bold text-primary">What's Covered</h3><!-- covered_header -->
         <div class="checkboxes flex-row">
           <div class="flex-col-sm-6">
 
@@ -367,9 +367,9 @@ if( count( $covered_item ) != 0 ) { ?>
 
       <!-- right side -->
       <div class="side-by-side">
-        <h3 class="bold text-primary">What's Not Covered</h3>
+        <h3 class="bold text-primary">What's Not Covered</h3><!-- covered_header -->
         <div class="checkboxes">
-            <ul>
+            <ul><!-- not_covered -->
               <li><i class="fa fa-times text-dark"></i> Pre-existing Conditions <a href="#" class="" title=""><i class="fa fa-question-circle text-dark"></i></a></li>
               <li><i class="fa fa-times text-dark"></i> Elective Procedures</li>
               <li><i class="fa fa-times text-dark"></i> Expression or removal of anal glands or anal sacculitis</li>
