@@ -9,7 +9,7 @@ body {
   margin: 0;
   padding: 0;
   background: #F1F1F1;
-  min-width: 360px;
+  min-width: 465px;
 }
 * {
   -webkit-box-sizing: border-box;
@@ -20,6 +20,9 @@ body {
 }
 .center {
   text-align: center;
+}
+.vertical-align-top {
+  vertical-align: top;
 }
 /*
   based on https://codepen.io/dgca/pen/QExbKN
@@ -524,6 +527,11 @@ body {
 [class^="flex-col"] img {
   width: 100%;
 }
+@media (max-width: 900px) {
+  [class^="flex-col"] {
+    width: 100%;
+  }
+}
 /* show and hide on certain screen widths */
 @media (max-width: 1023px) {
   .hide-below-tablet {
@@ -551,6 +559,7 @@ h4,
 h5,
 h6,
 .button-dark-1,
+p.small,
 .button-small-dark-1,
 [class^="btn"],
 [class^="badge"],
@@ -584,6 +593,7 @@ a,
 h1,
 h2,
 .button-dark-1,
+p.small,
 .button-small-dark-1,
 .claim-tale .numbers,
 .newsletter-bumper p,
@@ -668,6 +678,12 @@ h6 {
   font-size: 20px;
   line-height: 30px;
   color: #002438;
+}
+p.small {
+  margin: 0;
+  font-size: 14px;
+  line-height: 22px;
+  color: #ffffff;
 }
 .button-small-dark-1 {
   font-size: 14px;
@@ -1275,44 +1291,6 @@ select,
 .side-by-side .fa-question-circle {
   margin-left: 5px;
 }
-.hero-image {
-  background-position: center;
-  -webkit-background-size: cover;
-          background-size: cover;
-  height: 465;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-.hero-cta {
-  margin-left: 3%;
-  margin-bottom: 40px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.hero-cta h4 {
-  color: white;
-}
 .med-circle-icon {
   border: 4px solid #e62233;
   width: 75px;
@@ -1851,6 +1829,52 @@ body {
 }
 .homepage .main-nav {
   background: transparent !important;
+}
+.hero .hero-image h2 {
+  margin-bottom: 60px;
+}
+.hero .hero-image .btn-half-left {
+  padding: 6px 36px;
+  position: relative;
+  top: -3px;
+}
+.hero-image {
+  background-position: center;
+  -webkit-background-size: cover;
+          background-size: cover;
+  height: 465;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.hero-cta {
+  margin-left: 3%;
+  margin-bottom: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.hero-cta h4 {
+  color: white;
 }
 .quick-tips {
   padding: 25px 0px;
