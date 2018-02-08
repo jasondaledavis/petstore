@@ -1,3 +1,4 @@
+
 <?php include 'header.php' ?>
 
 <div class="bg-white">
@@ -13,8 +14,8 @@
         <p>Many pet health insurance plans look similar from a far, but PetFirst breaks down the nuances so you can see which pet insurance provider can give you and your dog or cat the best medical coverage.</p>
         <a class="btn-lg btn-primary" href="#" title="Large Primary Button">Get a Free Quote</a>
       </div>
-      <div class="flex-col-sm-6 fullbleed-image">
-        <img src="https://picsum.photos/1920/1068" alt="Generic Template ( not blog post)">
+      <div class="flex-col-sm-6 fullbleed-image hero-image" style="background-image: url(https://picsum.photos/1920/1068);">
+
       </div>
     </div>
   </div><!-- /.container -->

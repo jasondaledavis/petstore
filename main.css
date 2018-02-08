@@ -559,6 +559,7 @@ h6,
 [class^="btn"],
 [class^="badge"],
 .main-nvaigation ul li a,
+.claim-tale .numbers,
 .circle-icon:before,
 .top-nav,
 .newsletter-bumper p,
@@ -588,6 +589,7 @@ h1,
 h2,
 .button-dark-1,
 .button-small-dark-1,
+.claim-tale .numbers,
 .newsletter-bumper p,
 .quote-bumper p,
 table {
@@ -1100,7 +1102,7 @@ select,
   font-weight: bold;
 }
 .plan label {
-  color: #00669e;
+  color: rgba(0, 36, 56, 0.5);
   font-weight: normal;
 }
 .plan div {
@@ -1124,8 +1126,7 @@ select,
   padding: 25px;
 }
 .claim-tale {
-  margin: 30px auto !important;
-  padding: 32px !important;
+  margin: 60px auto !important;
   background-position: center !important;
   -webkit-background-size: cover !important;
           background-size: cover !important;
@@ -1133,6 +1134,58 @@ select,
 .claim-tale p {
   font-size: 18px;
   line-height: 27px;
+}
+.claim-tale .claim-tale-inner {
+  padding: 75px 32px !important;
+}
+.claim-tale .numbers {
+  border-collapse: collapse;
+  width: 400px;
+  font-size: 14px;
+  line-height: 20px;
+}
+.claim-tale .numbers .top {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 75px;
+  background: white;
+  -webkit-border-radius: 10px 10px 0 0;
+          border-radius: 10px 10px 0 0;
+}
+.claim-tale .numbers .bottom {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 75px;
+  background: #f1f1f1;
+  -webkit-border-radius: 0 0 10px 10px;
+          border-radius: 0 0 10px 10px;
+}
+.circle-icons .flex-col-sm-4:nth-child(1) .circle-icon:before {
+  content: "1";
+}
+.circle-icons .flex-col-sm-4:nth-child(2) .circle-icon:before {
+  content: "2";
+}
+.circle-icons .flex-col-sm-4:nth-child(3) .circle-icon:before {
+  content: "3";
 }
 .circle-icon {
   margin: 0 auto 20px auto;
@@ -1160,26 +1213,15 @@ select,
   width: 50px;
   left: 0px;
   bottom: 0px;
-  padding: 5px;
+  padding: 8px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-weight: bold;
   font-style: normal;
-  font-weight: normal;
   text-decoration: inherit;
   font-size: 27px;
   line-height: 32px;
   color: white;
-  content: "1";
-}
-.circle-icon:before:nth-child(1) {
-  content: "1";
-}
-.circle-icon:before:nth-child(2) {
-  content: "2";
-}
-.circle-icon:before:nth-child(3) {
-  content: "3";
 }
 .circle-icon .fa {
   width: 50%;
@@ -1218,7 +1260,6 @@ select,
   margin-left: 5px;
 }
 .hero-image {
-  background-image: url(temp-images/Hero-Image-Pet-Insurance.jpg);
   background-position: center;
   -webkit-background-size: cover;
           background-size: cover;
@@ -1734,6 +1775,15 @@ table td {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+@media (max-width: 1023px) {
+  .quick-tips {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 .quick-tip {
   position: relative;
   padding: 27px 4px 10px 4px;
@@ -1746,4 +1796,10 @@ table td {
 .quick-tip p {
   height: 58px;
   overflow: hidden;
+}
+@media (max-width: 1023px) {
+  .quick-tip {
+    width: 100%;
+    margin-bottom: 15px;
+  }
 }

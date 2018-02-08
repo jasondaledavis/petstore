@@ -12,7 +12,7 @@
         <a class="btn-lg btn-primary" href="#" title="Large Primary Button">Get a Free Quote</a>
 
       </div>
-      <div class="flex-col-sm-6 fullbleed-image hero-image">
+      <div class="flex-col-sm-6 fullbleed-image hero-image" style="background-image: url(temp-images/Hero-Image-Pet-Insurance.jpg);">
 
         <div class="hero-cta">
           <span class="med-circle-icon"><i class="fa fa-dog-face"></i></span>
@@ -36,11 +36,11 @@
 
 <!-- How it works Component -->
 <div class="flex-container fullbleed bg-light-1">
-  <div class="page-width">
+  <div class="center page-width">
     <h5 class="text-primary">Pet Insurance</h5>
     <h2 class="bold"> How it Works</h2>
 
-    <div class="flex-row">
+    <div class="flex-row circle-icons">
 
       <div class="flex-col-sm-4 center">
         <div class="circle-icon">
@@ -74,38 +74,36 @@
 
 
   <!-- Claim Tale (Individual) Component -->
-  <div class="flex-container claim-tale pad" style="background: url('temp-images/Full-Width-Banner-Claim-Tale-MacDuff.jpg'); background-position: center;
-  background-size: cover;">
-  <div class="flex-row page-width">
+  <div class="flex-container claim-tale nopad fullbleed" style="background: url('temp-images/Full-Width-Banner-Claim-Tale-MacDuff.jpg'); background-position: center;
+  background-size: cover; background-attachment: fixed;">
+  <div class="claim-tale-inner overlay-dark-25">
+    <div class="flex-row page-width">
 
-    <div class="flex-col-sm-8">
-      <h2 class="bold text-light-1">MacDuff's close call with a car</h2>
-      <p class="text-light-1">When MacDuff the Airedale Terrier was hit by a car, bone fractures and lung damage required x-rays, surgery and a 10-day stay at the veterinary emergency hospital. </p>
-      <a class="cta" href="#" title="More Claim Tales">
-        <span class="text-light-1">More Claim Tales <i class="fa fa-arrow-right"></i></span>
-      </a>
-    </div>
-
-    <div class="flex-col-sm-4">
-
-      <div class="table-container">
-        <table>
-          <th>
-            <tr>
-              <td>Total Vet Bill</td>
-              <td>PetFirst Reimbursed</td>
-            </tr>
-          </th>
-          <tr>
-            <td>$9,706</td>
-            <td class="exagerated">$8,511</td>
-          </tr>
-        </table>
+      <div class="flex-col-sm-8">
+        <h2 class="bold text-light-1">MacDuff's close call with a car</h2>
+        <p class="text-light-1">When MacDuff the Airedale Terrier was hit by a car, bone fractures and lung damage required x-rays, surgery and a 10-day stay at the veterinary emergency hospital. </p>
+        <a class="cta" href="#" title="More Claim Tales">
+          <span class="text-light-1">More Claim Tales <i class="fa fa-arrow-right"></i></span>
+        </a>
       </div>
 
-    </div>
+      <div class="flex-col-sm-4">
 
-  </div><!-- /.flex-row -->
+        <div class="numbers">
+          <div class="top">
+            <span>Total Vet Bill</span>
+            <span>PetFirst Reimbursed</span>
+          </div>
+          <div class="bottom">
+            <span>$9,706</span>
+            <span class="exagerated">$8,511</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div><!-- /.flex-row -->
+  </div>
 </div><!-- /.container -->
 
 
