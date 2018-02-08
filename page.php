@@ -14,7 +14,7 @@
 get_header(); ?>
 
 <div class="bg-white">
-<div class="flex-container fullbleed-left">
+<div class="flex-container nopad fullbleed-left">
 <div class="flex-row">
 <div class="flex-col-sm-6">
 
@@ -25,16 +25,8 @@ yoast_breadcrumb('
 ');
 }
 ?>
-
-<?php if ( get_post_meta( $post->ID, 'petfirst_page_heading', true ) ) { ?>
-<!-- this is the custom page title -->
-<h1 class="page-title"><span class="entry-title"><?php echo get_post_meta($post->ID, 'petfirst_page_heading', true) ?></span></h1>
-
-<?php } else { ?>
 <!-- this is the WordPress default page title  -->
-
 <h1 class="page-title"><span class="entry-title"><?php the_title(); ?></span></h1>
-<?php } ?>
 
 <?php
 // Start the loop.

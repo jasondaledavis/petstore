@@ -1,14 +1,15 @@
 <?php
 /**
- * Template Name: Team Member
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages and that
- * other "pages" on your WordPress site will use a different template.
- *
- * @package WordPress
- * @subpackage petfirst
- * @since petfirst 1.0
- */
+* Template Name: Pet Insurance
+*
+* This is the template that displays all pages by default.
+* Please note that this is the WordPress construct of pages and that
+* other "pages" on your WordPress site will use a different template.
+*
+* @package WordPress
+* @subpackage petfirst
+* @since petfirst 1.0
+*/
 
 get_header(); ?>
 
@@ -26,7 +27,8 @@ yoast_breadcrumb('
 ?>
 <!-- this is the WordPress default page title  -->
 <h1 class="page-title"><span class="entry-title"><?php the_title(); ?></span></h1>
-<?php query_posts( array( 'post_status' => 'publish' , 'post_type' => array( 'team_member' )  ) ); ?>
+
+<?php query_posts( array( 'post_status' => 'publish' , 'post_type' => array( 'pet_insurance' )  ) ); ?>
 <?php
 // Start the loop.
 while ( have_posts() ) : the_post();
@@ -80,4 +82,5 @@ endwhile;
 </div><!-- /.flex-row -->
 </div><!-- /.white-box -->
 </div><!-- /.container -->
+
 <?php get_footer(); ?>
