@@ -39,9 +39,9 @@ endwhile;
 <a class="btn-lg btn-primary" href="<?php the_permalink(); ?>" title="Large Primary Button"><?php echo get_post_meta($post->ID, 'petfirst_page_subtitle', true) ?></a>
 
 
-      </div>
+</div>
 
-      <div class="flex-col-sm-6 fullbleed-image hero-image" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/img/Hero-Image-Pet-Insurance.jpg);">
+<div class="flex-col-sm-6 fullbleed-image hero-image" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/img/Hero-Image-Pet-Insurance.jpg);">
 
 
 <?php 
@@ -118,10 +118,8 @@ endwhile;
   </div><!-- /.container -->
 
 
-
-
   <!-- Claim Tale (Individual) Component -->
-  <div class="flex-container claim-tale nopad fullbleed" style="background: url('temp-images/Full-Width-Banner-Claim-Tale-MacDuff.jpg'); background-position: center;
+  <div class="flex-container claim-tale nopad fullbleed" style="background: url('<?php echo get_template_directory_uri();?>/assets/img/Full-Width-Banner-Claim-Tale-MacDuff.jpg'); background-position: center;
   background-size: cover; background-attachment: fixed;">
   <div class="claim-tale-inner overlay-dark-25">
     <div class="flex-row page-width">
@@ -317,30 +315,32 @@ endwhile;
 
 
 <?php 
-$covered_item = get_post_meta($post->ID, 'covered_item', false);
-if( count( $covered_item ) != 0 ) { ?>
+// $covered_item = get_post_meta($post->ID, 'covered_item', false);
+// if( count( $covered_item ) != 0 ) { 
+  ?>
 
-<ul>
-<?php //foreach($mood as $covered_item) {
-            echo '<li><i class="fa fa-check text-accent"></i>'.$covered_item.'</li>';
-            }
-            ?>
-</ul>
+<!-- <ul> -->
 <?php 
-} else { 
-// do nothing; 
-}
+// foreach($mood as $covered_item) {
+//             echo '<li><i class="fa fa-check text-accent"></i>'.$covered_item.'</li>';
+//             }
+            ?>
+<!-- </ul> -->
+<?php 
+// } else { 
+// // do nothing; 
+// }
 ?>
 
 
-            <!-- <ul >
+            <ul >
               <li><i class="fa fa-check text-accent"></i> Accidents</li> 
               <li><i class="fa fa-check text-accent"></i> Illnesses (incl. hereditary, congenital, &amp; chronic conditions)</li>
               <li><i class="fa fa-check text-accent"></i> Hospitalizations</li>
               <li><i class="fa fa-check text-accent"></i> Surgeries</li>
               <li><i class="fa fa-check text-accent"></i> Diagnostic Tests</li>
               <li><i class="fa fa-check text-accent"></i> Exam Fees</li>
-            </ul> -->
+            </ul>
           </div>
           <div class="flex-col-sm-6">
             <ul>
