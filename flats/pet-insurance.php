@@ -3,7 +3,7 @@
 
 <!-- Hero Component right image two cta -->
 <div class="bg-light-1">
-  <div class="flex-container fullbleed-left">
+  <div class="flex-container nopad fullbleed-left">
     <div class="flex-row">
       <div class="flex-col-sm-6">
 

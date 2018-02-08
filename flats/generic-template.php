@@ -2,7 +2,7 @@
 <?php include 'header.php' ?>
 
 <div class="bg-white">
-  <div class="flex-container fullbleed-left">
+  <div class="flex-container nopad fullbleed-left">
     <div class="flex-row">
       <div class="flex-col-sm-6">
         <ul class="breadcrumb">

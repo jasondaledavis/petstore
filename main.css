@@ -32,15 +32,11 @@ body {
   padding: 0 1em;
 }
 .fullbleed,
-.fullbleed-left,
 .fullbleed-right {
   margin: 0;
   padding: 0;
   max-width: 100% !important;
   width: 100% !important;
-}
-.fullbleed-left {
-  margin-left: 5%;
 }
 .fullbleed-right {
   margin-right: 5%;
@@ -927,7 +923,7 @@ select,
 .max-header-width,
 .main-nav-inner,
 .top-nav .top-nav-inner {
-  max-width: 1230px;
+  max-width: 1200px;
 }
 @media (min-width: 513px) {
   .max-header-width,
@@ -935,6 +931,13 @@ select,
   .top-nav .top-nav-inner {
     padding-left: 15px;
     padding-right: 15px;
+  }
+}
+@media (min-width: 1025px) {
+  .max-header-width,
+  .main-nav-inner,
+  .top-nav .top-nav-inner {
+    padding-right: 0;
   }
 }
 /* Mobile contact buttons */
