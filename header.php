@@ -40,7 +40,7 @@ get_template_part( 'template-parts/head', 'meta' ); ?>
         </div>
 
         <div class="site-branding">
-            <a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri();?>/images/logo.svg" alt="Pet first logo"></a>
+            <a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri();?>/assets/img/logo.svg" alt="Pet first logo"></a>
         </div><!-- .site-branding -->
 
         <div class="nav-side flex-row">
