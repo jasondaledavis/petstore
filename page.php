@@ -38,10 +38,16 @@ get_template_part( 'template-parts/content', 'page' );
 // End of the loop.
 endwhile;
 ?>
-
 <!-- this is the CTA that appears below the content area -->
-<a class="btn-lg btn-primary" href="<?php the_permalink(); ?>" title="Large Primary Button"><?php echo get_post_meta($post->ID, 'global_page_cta', true) ?></a>
+<?php if ( get_post_meta( $post->ID, 'global_page_cta', true ) ) {
 
+echo '<a href="#" class="btn-lg btn-primary" href="<?php the_permalink(); ?>" title="Large Primary Button">';
+
+echo get_post_meta( $post->ID, 'global_page_cta', true );
+
+'</a>';
+
+} ?> 
 </div><!-- end .flex-col-sm-6 -->
 
 <?php get_template_part( 'template-parts/heroes' ); ?>

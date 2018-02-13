@@ -40,7 +40,15 @@ endwhile;
 ?>
 
 <!-- this is the CTA that appears below the content area -->
-<a class="btn-lg btn-primary" href="<?php the_permalink(); ?>" title="Large Primary Button"><?php echo get_post_meta($post->ID, 'global_page_cta', true) ?></a>
+<?php if ( get_post_meta( $post->ID, 'global_page_cta', true ) ) {
+
+echo '<a href="#" class="btn-lg btn-primary" href="<?php the_permalink(); ?>" title="Large Primary Button">';
+
+echo get_post_meta( $post->ID, 'global_page_cta', true );
+
+'</a>';
+
+} ?> 
 
 </div><!-- end .flex-col-sm-6 -->
 
@@ -63,45 +71,7 @@ the_post_thumbnail( 'header-image', array( 'alt' => the_title_attribute( 'echo=0
 </div><!-- /.white-box -->
 </div><!-- /.container -->
 
-
-<!-- How it works Component -->
-<div class="flex-container fullbleed bg-light-1">
-  <div class="center page-width">
-    <h5 class="text-primary">Pet Insurance</h5>
-    <h2 class="bold"> How it Works</h2>
-
-    <div class="flex-row circle-icons">
-
-      <div class="flex-col-sm-4 center">
-        <div class="circle-icon">
-          <i class="fa fa-vet-nurse"></i>
-        </div>
-        <h4 class="bold">Take your pet to the vet</h4>
-        <p>Visit any licensed vet, emergency clinic or specialist in the US. There's no network of providers to worry about.</p>
-      </div>
-
-      <div class="flex-col-sm-4 center">
-        <div class="circle-icon">
-          <i class="fa fa-paper-and-pen"></i>
-        </div>
-        <h4 class="bold">Send us your claim</h4>
-        <p>Pay your bill at the vet, and send us your claim along with vet records from the visit and an invoice.</p>
-      </div>
-
-      <div class="flex-col-sm-4 center">
-        <div class="circle-icon">
-          <i class="fa fa-hand-holding-money"></i>
-        </div>
-        <h4 class="bold">Get money back quickly</h4>
-        <p>PetFirst will follow-up with your vet for any missing info. Claims are processed in less than two weeks. </p>
-        </div>
-
-      </div><!-- /.flex-row -->
-    </div>
-  </div><!-- /.container -->
-
-
-
+<?php get_template_part( 'template-parts/howitworks' ); ?>
 
   <!-- Claim Tale (Individual) Component -->
   <div class="flex-container claim-tale nopad fullbleed" style="background: url('<?php echo get_template_directory_uri();?>/assets/img/Full-Width-Banner-Claim-Tale-MacDuff.jpg'); background-position: center;

@@ -3,7 +3,7 @@
 * Author: Jason Davis
 * Requires at least: WordPress 4.7+
 * Tested up to: WordPress 4.9+
-* Version: 1.3.5
+* Version: 1.3.6
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -89,3 +89,6 @@ Source: <a href="https://github.com/aFarkas/html5shiv">https://github.com/aFarka
 
 = 1.3.5 =
 * Revised all page templates for interior pages.
+
+= 1.3.6 =
+* Coded How It Works (howitwork.php) in template parts and added to pet-insurance page.
