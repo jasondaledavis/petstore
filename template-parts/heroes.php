@@ -7,10 +7,10 @@
  * @since petfirst 1.0
  */
 ?>
-<!-- header with two cta's -->
-<?php if ( is_page() ) { ?>
 
-<?php if get_post_meta( $page_id, 'hero_header_cta_dog_and_cat_insurance', true ) ) { ?>
+<!-- header with two cta's -->
+
+<?php if ( get_post_meta( $page_id, 'hero_header_cta_dog_and_cat_insurance', true ) ) { ?>
 
       <div class="flex-col-sm-6 fullbleed-image hero-image" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/img/Hero-Image-Pet-Insurance.jpg);"> 
 
@@ -69,5 +69,3 @@
 
 <?php }?>
 
-
- <?php endif; ?>
