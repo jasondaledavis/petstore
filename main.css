@@ -2069,7 +2069,7 @@ table td {
   overflow: hidden;
 }
 .claim-tales-slider-container .claim-tales-slider-bg {
-  background-image: url('temp-images/Full-Width-Banner-Claim-Tale-MacDuff.jpg');
+  background-image: url('assets/img/Full-Width-Banner-Claim-Tale-MacDuff.jpg');
   -webkit-background-size: cover;
           background-size: cover;
   background-position: center;
