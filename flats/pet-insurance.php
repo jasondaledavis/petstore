@@ -1,54 +1,25 @@
-<?php
-/**
-* Template Name: Pet Insurance
-*
-* This is the template that displays all pages by default.
-* Please note that this is the WordPress construct of pages and that
-* other "pages" on your WordPress site will use a different template.
-*
-* @package WordPress
-* @subpackage petfirst
-* @since petfirst 1.0
-*/
-
-get_header(); ?>
+<?php include 'header.php' ?>
 
 
 <!-- Hero Component right image two cta -->
 <div class="bg-light-1">
-<div class="flex-container nopad fullbleed-left">
-<div class="flex-row">
-<div class="flex-col-sm-6">
+  <div class="flex-container nopad fullbleed-left">
+    <div class="flex-row">
+      <div class="flex-col-sm-6">
 
-        <!-- this is the WordPress default page title  -->
-<h1 class="page-title"><span class="entry-title"><?php the_title(); ?></span></h1>
-
-<?php query_posts( array( 'post_status' => 'publish' , 'post_type' => array( 'pet_insurance' )  ) ); ?>
-<?php
-// Start the loop.
-while ( have_posts() ) : the_post();
-
-// Include the page content template.
-get_template_part( 'template-parts/content', 'page' );
-
-// End of the loop.
-endwhile;
-?>
-
-<!-- this is the CTA that appears below the content area -->
-<a class="btn-lg btn-primary" href="<?php the_permalink(); ?>" title="Large Primary Button"><?php echo get_post_meta($post->ID, 'global_page_cta', true) ?></a>
-
+        <h2 class="bold">Pet Insurance</h2>
+        <p>Many pet health insurance plans look similar from a far, but PetFirst breaks down the nuances so you can see which pet insurance provider can give you and your dog or cat the best medical coverage.Many pet health insurance plans look similar from a far, but PetFirst breaks down the nuances so you can see which pet insurance provider can give you and your dog or cat the best medical coverage. Many pet health insurance plans look similar from a far, but PetFirst breaks down the nuances so you can see which pet insurance provider can give you and your dog or cat the best medical coverage.</p>
+        <a class="btn-lg btn-primary" href="#" title="Large Primary Button">Get a Free Quote</a>
 
       </div>
+      <div class="flex-col-sm-6 nopad hero-image" style="background-image: url(temp-images/Hero-Image-Pet-Insurance.jpg);">
 
-      <div class="flex-col-sm-6 fullbleed-image hero-image" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/img/Hero-Image-Pet-Insurance.jpg);">
-
-        <div class="hero-cta">
+        <div class="circle-cta">
           <span class="med-circle-icon"><i class="fa fa-dog-face"></i></span>
           <h4 class="bold"> Dog Insurance <i class="fa fa-arrow-right"></i></h4>
         </div>
 
-        <div class="hero-cta">
+        <div class="circle-cta">
           <span class="med-circle-icon"><i class="fa fa-cat-face"></i></span>
           <h4 class="bold"> Cat Insurance <i class="fa fa-arrow-right"></i></h4>
         </div>
@@ -103,7 +74,7 @@ endwhile;
 
 
   <!-- Claim Tale (Individual) Component -->
-  <div class="flex-container claim-tale nopad fullbleed" style="background: url('<?php echo get_template_directory_uri();?>/assets/img/Full-Width-Banner-Claim-Tale-MacDuff.jpg'); background-position: center;
+  <div class="flex-container claim-tale nopad fullbleed" style="background: url('temp-images/Full-Width-Banner-Claim-Tale-MacDuff.jpg'); background-position: center;
   background-size: cover; background-attachment: fixed;">
   <div class="claim-tale-inner overlay-dark-25">
     <div class="flex-row page-width">
@@ -402,5 +373,5 @@ endwhile;
 
 
 
-<?php //include 'bottom-navigation.php' ?>
-<?php get_footer(); ?>
+<?php include 'footer.php' ?>
+<?php include 'bottom-navigation.php' ?>
