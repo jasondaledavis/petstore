@@ -3,7 +3,7 @@
 * Author: Jason Davis
 * Requires at least: WordPress 4.7+
 * Tested up to: WordPress 4.9+
-* Version: 1.3.3
+* Version: 1.3.4
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -82,3 +82,7 @@ Source: <a href="https://github.com/aFarkas/html5shiv">https://github.com/aFarka
 * Added new main.css
 * Revised all page templates.
 * Added query for custom post types to page templates.
+
+= 1.3.4 =
+* Revised all page templates for heroes.
+* Revised header.php for new home page layout and interior pages.

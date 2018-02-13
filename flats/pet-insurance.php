@@ -36,7 +36,7 @@ endwhile;
 ?>
 
 <!-- this is the CTA that appears below the content area -->
-<a class="btn-lg btn-primary" href="<?php the_permalink(); ?>" title="Large Primary Button"><?php echo get_post_meta($post->ID, 'petfirst_page_subtitle', true) ?></a>
+<a class="btn-lg btn-primary" href="<?php the_permalink(); ?>" title="Large Primary Button"><?php echo get_post_meta($post->ID, 'global_page_cta', true) ?></a>
 
 
       </div>

@@ -1,14 +1,15 @@
 <?php
 /**
- * Template Name: Pets
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages and that
- * other "pages" on your WordPress site will use a different template.
- *
- * @package WordPress
- * @subpackage petfirst
- * @since petfirst 1.0
- */
+* The template for displaying pages
+*
+* This is the template that displays all pages by default.
+* Please note that this is the WordPress construct of pages and that
+* other "pages" on your WordPress site will use a different template.
+*
+* @package WordPress
+* @subpackage petfirst
+* @since petfirst 1.0
+*/
 
 get_header(); ?>
 
@@ -40,13 +41,11 @@ endwhile;
 ?>
 
 <!-- this is the CTA that appears below the content area -->
-<a class="btn-lg btn-primary" href="<?php the_permalink(); ?>" title="Large Primary Button"><?php echo get_post_meta($post->ID, 'petfirst_page_subtitle', true) ?></a>
+<a class="btn-lg btn-primary" href="<?php the_permalink(); ?>" title="Large Primary Button"><?php echo get_post_meta($post->ID, 'global_page_cta', true) ?></a>
 
 </div><!-- end .flex-col-sm-6 -->
 
-<div class="flex-col-sm-6 fullbleed-image">
-
-<img src="<?php echo get_template_directory_uri();?>/assets/img/header_placeholder.png" alt="">
+<?php get_template_part( 'template-parts/heroes' ); ?>
 
 </div><!-- end .flex-col-sm-6 -->
 
@@ -81,4 +80,5 @@ endwhile;
 </div><!-- /.flex-row -->
 </div><!-- /.white-box -->
 </div><!-- /.container -->
+
 <?php get_footer(); ?>

@@ -84,7 +84,7 @@
           
             <?php } ?>
 
-            <h2 class="page-subtitle"><?php echo get_post_meta($post->ID, 'petfirst_page_subtitle', true) ?></h2>
+            <h2 class="page-subtitle"><?php echo get_post_meta($post->ID, 'global_page_cta', true) ?></h2>
 
         </div>
 

@@ -40,27 +40,11 @@ endwhile;
 ?>
 
 <!-- this is the CTA that appears below the content area -->
-<a class="btn-lg btn-primary" href="<?php the_permalink(); ?>" title="Large Primary Button"><?php echo get_post_meta($post->ID, 'petfirst_page_subtitle', true) ?></a>
+<a class="btn-lg btn-primary" href="<?php the_permalink(); ?>" title="Large Primary Button"><?php echo get_post_meta($post->ID, 'global_page_cta', true) ?></a>
 
 </div><!-- end .flex-col-sm-6 -->
 
-<div class="flex-col-sm-6 fullbleed-image hero-image" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/img/Hero-Image-Pet-Insurance.jpg);">
-<?php 
- 
-// $mood = get_post_meta($post->ID, 'Mood', true);
- 
-// if ($mood) { ?>
- 
-<!-- // <p>Today's Mood: <? //echo $mood; ?></p> -->
- 
-<?php 
- 
-// } else { 
-// // do nothing; 
-// }
- 
-?>
-<!-- <img src="<?php //echo get_template_directory_uri();?>/assets/img/header_placeholder.png" alt=""> -->
+<?php get_template_part( 'template-parts/heroes' ); ?>
 
 </div><!-- end .flex-col-sm-6 -->
 

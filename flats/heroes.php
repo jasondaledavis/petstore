@@ -1,5 +1,6 @@
 <?php include 'header.php' ?>
 
+<?php if ( get_post_meta( $page_id, 'petfirst_page_heading', true ) ) { ?>
 
 <h2>Hero Component right image with 2 ctas</h2>
 <div class="hero bg-light-1">
@@ -29,6 +30,7 @@
   </div>
 </div>
 
+<?php } elseif ( get_post_meta( $page_id, 'petfirst_page_heading', true ) ) { ?>
 
 <h2>Hero Component right image right 3 ctas</h2>
 <div class="hero bg-light-1">
@@ -63,6 +65,7 @@
   </div>
 </div>
 
+<?php } elseif ( get_post_meta( $page_id, 'petfirst_page_heading', true ) ) { ?>
 
 <h2>Hero Component right image</h2>
 <div class="hero bg-light-1">
@@ -81,6 +84,7 @@
   </div>
 </div>
 
+<?php } elseif ( get_post_meta( $page_id, 'petfirst_page_heading', true ) ) { ?>
 
 <h2>Hero Component right video not autoplay</h2>
 <div class="hero bg-light-1">
@@ -99,7 +103,7 @@
   </div>
 </div>
 
-
+<?php } elseif ( get_post_meta( $page_id, 'petfirst_page_heading', true ) ) { ?>
 
 <h2>Hero Component right image with quote form</h2>
 
@@ -127,11 +131,10 @@
   </div>
 </div>
 
-
+<?php }?>
 
 
 
 
 
 <?php include 'footer.php' ?>
-<?php include 'bottom-navigation.php' ?>
