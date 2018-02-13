@@ -44,9 +44,18 @@ endwhile;
 
 </div><!-- end .flex-col-sm-6 -->
 
-<div class="flex-col-sm-6 fullbleed-image hero-image" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/img/Hero-Image-Pet-Insurance.jpg);">
-
 <?php get_template_part( 'template-parts/heroes' ); ?>
+<?php
+
+if ( has_post_thumbnail() ) {
+
+// leave this and for just an image use post thumbnail function or default to an image with the else statement
+the_post_thumbnail( 'header-image', array( 'alt' => the_title_attribute( 'echo=0' ), 'class' => "custom-header-image" ) ); 
+
+} else {  
+    $image = get_template_directory_uri() .'/assets/img/Hero-Image-Pet-Insurance.jpg'; 
+    echo '<div class="flex-col-sm-6 fullbleed-image hero-image" style="background:url('.$image.');background-size: cover;" /></div>';
+} ?>
 
 </div><!-- end .flex-col-sm-6 -->
 
