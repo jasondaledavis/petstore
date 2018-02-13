@@ -12,7 +12,7 @@ get_template_part( 'template-parts/head', 'meta' ); ?>
 
 <body <?php body_class(); ?>>
 
-   <?php if ( is_front_page() && is_home() ) {
+   <?php if ( is_front_page() ) {
 
             echo '<div id="page" class="site homepage">';
 
@@ -21,8 +21,6 @@ get_template_part( 'template-parts/head', 'meta' ); ?>
             echo '<div id="page" class="site">';
             
             } ?> 
-
-
 
   <header class="site-header">
 
@@ -42,10 +40,10 @@ get_template_part( 'template-parts/head', 'meta' ); ?>
         </div>
       </div>
 
-    <?php if ( !is_front_page() ) : ?>
+    <?php if ( is_front_page() ) : ?>
 
         <!-- home page header -->
-      <video src="temp-images/PetFirst-Homepage-Video.mp4" autoplay loop playsinline muted></video>
+      <video src="<?php echo get_template_directory_uri();?>/assets/img/PetFirst-Homepage-Video.mp4" autoplay loop playsinline muted></video>
       <div class="viewport-header">
 
         <div class="homepage-intro-text">
@@ -59,7 +57,7 @@ get_template_part( 'template-parts/head', 'meta' ); ?>
   </header>
 
 
-  <?php if ( is_front_page() && is_home() ) : ?>
+  <?php if ( is_front_page() ) : ?>
 
     <div class="homepage-content">
             
@@ -74,7 +72,7 @@ get_template_part( 'template-parts/head', 'meta' ); ?>
       </div>
 
       <div class="site-branding">
-        <a class="logo" href="/" rel="home"><?php include 'images/logo.php' ?></a>
+         <a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri();?>/assets/img/logo.svg" alt="Pet first logo"></a>
       </div><!-- .site-branding -->
 
       <div class="nav-side flex-row">

@@ -50,7 +50,7 @@
 <!-- header with video background -->
 <?php } elseif ( get_post_meta( $page_id, 'hero_header_video', true ) ) { ?>
 
-      <div class="flex-col-sm-6 fullbleed-image hero-image" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/img/Hero-Image-Pet-Insurance.jpg);">
+      <div class="flex-col-sm-6 fullbleed-image hero-image"><video src="<?php echo get_template_directory_uri();?>/assets/img/PetFirst-Homepage-Video.mp4" autoplay loop playsinline muted></video></div>
 
 <!-- header with get a quote cta -->
 <?php } elseif ( get_post_meta( $page_id, 'get_a_quote_cta', true ) ) { ?>
