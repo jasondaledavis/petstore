@@ -103,7 +103,7 @@ endwhile;
 
 
   <!-- Claim Tale (Individual) Component -->
-  <div class="flex-container claim-tale nopad fullbleed" style="background: url('temp-images/Full-Width-Banner-Claim-Tale-MacDuff.jpg'); background-position: center;
+  <div class="flex-container claim-tale nopad fullbleed" style="background: url('<?php echo get_template_directory_uri();?>/assets/img/Full-Width-Banner-Claim-Tale-MacDuff.jpg'); background-position: center;
   background-size: cover; background-attachment: fixed;">
   <div class="claim-tale-inner overlay-dark-25">
     <div class="flex-row page-width">
