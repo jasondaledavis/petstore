@@ -41,7 +41,7 @@ endwhile;
 <!-- this is the CTA that appears below the content area -->
 <?php if ( get_post_meta( $post->ID, 'global_page_cta', true ) ) {
 
-echo '<a href="#" class="btn-lg btn-primary" href="<?php the_permalink(); ?>" title="Large Primary Button">';
+echo '<a class="btn-lg btn-primary" href="<?php the_permalink(); ?>" title="Large Primary Button">';
 
 echo get_post_meta( $post->ID, 'global_page_cta', true );
 
@@ -92,7 +92,16 @@ the_post_thumbnail( 'header-image', array( 'alt' => the_title_attribute( 'echo=0
 
 <div class="flex-col-sm-4 center">
 
-<a class="btn-lg btn-primary btn-wide" href="<?php the_permalink(); ?>" title="Large Primary Button"><?php echo get_post_meta($post->ID, 'cta_button_below_content', true) ?></a>
+<?php if ( get_post_meta( $post->ID, 'cta_button_below_content', true ) ) {
+
+echo '<a class="btn-lg btn-primary btn-wide" href="<?php the_permalink(); ?>" title="Large Primary Button">';
+
+echo get_post_meta( $post->ID, 'cta_button_below_content', true );
+
+'</a>';
+
+} ?> 
+
 
 </div><!-- end .flex-col-sm-4 -->
 </div><!-- /.flex-row -->

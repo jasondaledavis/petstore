@@ -43,7 +43,7 @@ endwhile;
 <!-- this is the CTA that appears below the content area -->
 <?php if ( get_post_meta( $post->ID, 'global_page_cta', true ) ) {
 
-echo '<a href="#" class="btn-lg btn-primary" href="<?php the_permalink(); ?>" title="Large Primary Button">';
+echo '<a class="btn-lg btn-primary" href="<?php the_permalink(); ?>" title="Large Primary Button">';
 
 echo get_post_meta( $post->ID, 'global_page_cta', true );
 
