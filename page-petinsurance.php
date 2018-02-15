@@ -13,10 +13,10 @@
 
 get_header(); ?>
 
-  <div class="bg-white">
-    <div class="flex-container nopad fullbleed-left">
-      <div class="flex-row">
-        <div class="flex-col-sm-6">
+<div class="hero bg-light-1">
+  <div class="flex-container nopad fullbleed-left">
+    <div class="flex-row">
+      <div class="flex-col-sm-6">
 
           <?php
             if ( function_exists('yoast_breadcrumb') && !is_front_page() ) {
@@ -53,26 +53,16 @@ get_header(); ?>
 
         </div><!-- end .flex-col-sm-6 -->
 
-        <?php get_template_part( 'template-parts/heroes' ); ?>
+        <div class="flex-col-sm-6 nopad fullbleed-video hero-image" style="background: url('<?php echo get_template_directory_uri();?>/assets/img/Hero-Image-Pet-Insurance.jpg');background-size: cover;background-repeat: no-repeat;">
 
-        <?php
+          <?php get_template_part( 'template-parts/heroes' ); ?>
 
-        //if ( has_post_thumbnail() ) {
-
-        // leave this and for just an image use post thumbnail function or default to an image with the else statement
-        // the_post_thumbnail( 'header-image', array( 'alt' => the_title_attribute( 'echo=0' ), 'class' => "flex-col-sm-6 fullbleed-image hero-image" ) ); 
-
-        // } else {  
-        //     $image = get_template_directory_uri() .'/assets/img/Hero-Image-Pet-Insurance.jpg'; 
-        //     echo '<div class="flex-col-sm-6 fullbleed-image hero-image" style="background:url('.$image.');background-size: cover;" /></div>';
-        // } 
-        ?>
-
-        <!-- </div> --><!-- end .flex-col-sm-6 -->
+        </div><!-- end .flex-col-sm-6 -->
 
       </div><!-- /.flex-row -->
     </div><!-- /.white-box -->
   </div><!-- /.container -->
+</div><!-- end .hero bg-light-1 -->
 
   <?php get_template_part( 'template-parts/howitworks' ); ?>
 
@@ -333,58 +323,89 @@ get_header(); ?>
 
       <!-- left side -->
       <div class="side-by-side">
-        <h3 class="bold text-primary">What's Covered</h3>
-        <div class="checkboxes flex-row">
+       
+
+        <?php if ( get_post_meta( $post->ID, 'covered_header', true ) ) { 
+
+          echo '<h3 class="bold text-primary">'.get_post_meta( $post->ID, 'covered_header', true ).'</h3>';
+
+        } else {
+
+          echo '<h3 class="bold text-primary">What\'s Covered</h3>';
+
+        } ?>
+
+
+        <div class="checkboxes flex-row"><!-- covered_item -->
           <div class="flex-col-sm-6">
             <ul >
-              <li><i class="fa fa-check text-accent"></i> Accidents</li>
-              <li><i class="fa fa-check text-accent"></i> Illnesses (incl. hereditary, congenital, &amp; chronic conditions)</li>
-              <li><i class="fa fa-check text-accent"></i> Hospitalizations</li>
-              <li><i class="fa fa-check text-accent"></i> Surgeries</li>
-              <li><i class="fa fa-check text-accent"></i> Diagnostic Tests</li>
-              <li><i class="fa fa-check text-accent"></i> Exam Fees</li>
+              <li><i class="fa fa-check text-accent"></i><?php get_post_meta( $post->ID, 'covered_item', true ); ?></li>
+              <li><i class="fa fa-check text-accent"></i><?php get_post_meta( $post->ID, 'covered_item', true ); ?></li>
+              <li><i class="fa fa-check text-accent"></i><?php get_post_meta( $post->ID, 'covered_item', true ); ?></li>
+              <li><i class="fa fa-check text-accent"></i><?php get_post_meta( $post->ID, 'covered_item', true ); ?></li>
+              <li><i class="fa fa-check text-accent"></i><?php get_post_meta( $post->ID, 'covered_item', true ); ?></li>
+              <li><i class="fa fa-check text-accent"></i><?php get_post_meta( $post->ID, 'covered_item', true ); ?></li>
             </ul>
           </div>
           <div class="flex-col-sm-6">
             <ul>
-              <li><i class="fa fa-check text-accent"></i> X-rays</li>
-              <li><i class="fa fa-check text-accent"></i> Ultrasounds</li>
-              <li><i class="fa fa-check text-accent"></i> Medications</li>
-              <li><i class="fa fa-check text-accent"></i> Holistic Care &amp; Alternative Therapies</li>
-              <li><i class="fa fa-check text-accent"></i> Emergency Care</li>
-              <li>And Much More!</li>
+              <li><i class="fa fa-check text-accent"></i><?php get_post_meta( $post->ID, 'covered_item', true ); ?></li>
+              <li><i class="fa fa-check text-accent"></i><?php get_post_meta( $post->ID, 'covered_item', true ); ?></li>
+              <li><i class="fa fa-check text-accent"></i><?php get_post_meta( $post->ID, 'covered_item', true ); ?></li>
+              <li><i class="fa fa-check text-accent"></i><?php get_post_meta( $post->ID, 'covered_item', true ); ?></li>
+              <li><i class="fa fa-check text-accent"></i><?php get_post_meta( $post->ID, 'covered_item', true ); ?></li>
+              <li><i class="fa fa-check text-accent"></i>And Much More!</li>
             </ul>
           </div>
         </div>
 
-        <h4 class="bold">After a 12-month wait period, your pet is also covered for:</h4>
+        <?php if ( get_post_meta( $post->ID, '12-month_covered_header', true ) ) { 
+
+          echo '<h4 class="bold">'.get_post_meta( $post->ID, '12-month_covered_header', true ).'</h4>';
+
+        } else {
+
+          echo '<h4 class="bold">After a 12-month wait period, your pet is also covered for:</h4>';
+
+        } ?>
+
         <ul>
-          <li><i class="fa fa-check text-accent"></i>Intravertebral Disc Disease (IVDD)</li>
-          <li><i class="fa fa-check text-accent"></i> Anterior Cruciate Ligaments</li>
-          <li><i class="fa fa-check text-accent"></i> Medial Cruciate Ligaments</li>
-          <li><i class="fa fa-check text-accent"></i> Posterior Cruciate Ligaments</li>
-          <li><i class="fa fa-check text-accent"></i> Cranial Cruciate Lugaments</li>
+          <li><i class="fa fa-check text-accent"></i><?php get_post_meta( $post->ID, 'covered_after_12_months_covered_item', true ); ?></li>
+          <li><i class="fa fa-check text-accent"></i><?php get_post_meta( $post->ID, 'covered_after_12_months_covered_item', true ); ?></li>
+          <li><i class="fa fa-check text-accent"></i><?php get_post_meta( $post->ID, 'covered_after_12_months_covered_item', true ); ?></li>
+          <li><i class="fa fa-check text-accent"></i><?php get_post_meta( $post->ID, 'covered_after_12_months_covered_item', true ); ?></li>
+          <li><i class="fa fa-check text-accent"></i><?php get_post_meta( $post->ID, 'covered_after_12_months_covered_item', true ); ?></li>
         </ul>
       </div>
       <!-- /left side -->
 
       <!-- right side -->
       <div class="side-by-side">
-        <h3 class="bold text-primary">What's Not Covered</h3>
-        <div class="checkboxes">
+
+        <?php if ( get_post_meta( $post->ID, 'not_covered_header', true ) ) { 
+
+          echo '<h3 class="bold text-primary">'.get_post_meta( $post->ID, 'not_covered_header', true ).'</h3>';
+
+        } else {
+
+          echo '<h3 class="bold text-primary">What\'s Not Covered</h3>';
+
+        } ?>
+
+        <div class="checkboxes"><!-- not_covered_item -->
             <ul>
-              <li><i class="fa fa-times text-dark"></i> Pre-existing Conditions <a href="#" class="" title=""><i class="fa fa-question-circle text-dark"></i></a></li>
-              <li><i class="fa fa-times text-dark"></i> Elective Procedures</li>
-              <li><i class="fa fa-times text-dark"></i> Expression or removal of anal glands or anal sacculitis</li>
-              <li><i class="fa fa-times text-dark"></i> Breeding or conditions related to breeding</li>
-              <li><i class="fa fa-times text-dark"></i> Pet food, special diet, vitamins, mineral supplements</li>
-              <li><i class="fa fa-times text-dark"></i> Grooming costs and bathing (incl. medicated baths)</li>
-              <li><i class="fa fa-times text-dark"></i> Parasite prevention, parasite treatment and illnesses transmitted by parasites (including fleas &amp; ticks)</li>
-              <li><i class="fa fa-times text-dark"></i> Orthodontics, endontics &amp; removal of deciduous teeth</li>
-              <li><i class="fa fa-times text-dark"></i> Behavioral Training</li>
-              <li><i class="fa fa-times text-dark"></i> Illness or injury which arises out of racing, coursing, commercial guarding, or organized fighting of your pet</li>
-              <li><i class="fa fa-times text-dark"></i> Routine wellness &amp; preventative care <a href="#" class="" title=""><i class="fa fa-question-circle text-dark"></i></a></li>
-              <li><i class="fa fa-times text-dark"></i> Organ Transplants</li>
+              <li><i class="fa fa-times text-dark"></i><?php get_post_meta( $post->ID, 'not_covered_item', true ); ?><a href="#" class="" title=""><i class="fa fa-question-circle text-dark"></i></a></li>
+              <li><i class="fa fa-times text-dark"></i><?php get_post_meta( $post->ID, 'not_covered_item', true ); ?></li>
+              <li><i class="fa fa-times text-dark"></i><?php get_post_meta( $post->ID, 'not_covered_item', true ); ?></li>
+              <li><i class="fa fa-times text-dark"></i><?php get_post_meta( $post->ID, 'not_covered_item', true ); ?></li>
+              <li><i class="fa fa-times text-dark"></i><?php get_post_meta( $post->ID, 'not_covered_item', true ); ?></li>
+              <li><i class="fa fa-times text-dark"></i><?php get_post_meta( $post->ID, 'not_covered_item', true ); ?></li>
+              <li><i class="fa fa-times text-dark"></i><?php get_post_meta( $post->ID, 'not_covered_item', true ); ?></li>
+              <li><i class="fa fa-times text-dark"></i><?php get_post_meta( $post->ID, 'not_covered_item', true ); ?></li>
+              <li><i class="fa fa-times text-dark"></i><?php get_post_meta( $post->ID, 'not_covered_item', true ); ?></li>
+              <li><i class="fa fa-times text-dark"></i><?php get_post_meta( $post->ID, 'not_covered_item', true ); ?></li>
+              <li><i class="fa fa-times text-dark"></i><?php get_post_meta( $post->ID, 'not_covered_item', true ); ?><a href="#" class="" title=""><i class="fa fa-question-circle text-dark"></i></a></li>
+              <li><i class="fa fa-times text-dark"></i><?php get_post_meta( $post->ID, 'not_covered_item', true ); ?></li>
             </ul>
 
             <a class="cta" href="#" title="Navigation">
