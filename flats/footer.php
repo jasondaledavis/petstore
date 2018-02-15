@@ -134,8 +134,17 @@
 	</footer>
 </body>
 
+<script
+ src="http://code.jquery.com/jquery-3.3.1.min.js"
+ integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+ crossorigin="anonymous"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.min.js"></script>
+
 <script>
+//FIXME this needs to be in files for concat and minify
+
+/* Swiper */
  var mySwiper = new Swiper ('.swiper-container', {
 	 // Optional parameters
 	 direction: 'horizontal',
@@ -152,7 +161,44 @@
 		 prevEl: '.swiper-button-prev',
 	 }
 
+ });
+  </script>
 
- })
- </script>
+<?php if($isHomePage) { ?>
+	<script>
+		 /* Home header scroll */
+		$(document).ready(function(){
+			var $topNav = $(".main-nav:eq(1)");
+			var $siteContent = $(".site-content");
+
+			navHasMoved = false;
+
+			$(window).scroll(function() {
+				if ( $(window).scrollTop() >= distFromTop($topNav) ) {
+					$topNav.appendTo(".main-nav-top");
+					navHasMoved = true;
+				}
+
+				if ( navHasMoved &&
+					$(window).scrollTop() < distFromTop($siteContent) ) {
+					$topNav.prependTo(".site-content");
+				}
+			});
+		});
+
+		function distFromTop(element){
+			return element.offset().top;
+		}
+
+	</script>
+
+	<script src="assets/js/swiper-background-swapper.js"></script>
+
+<?php }; //end if?>
+
+
+
+
+
+
 </html>

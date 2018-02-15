@@ -29,19 +29,19 @@
 				<a class="search" href="#" title=""><i class="fa fa-search"></i></a>
 				</div>
 			</div>
+			<div class="main-nav-top"></div>
 
 		<?php if($isHomePage){  ?>
 				<!-- home page header -->
 			<video src="temp-images/PetFirst-Homepage-Video.mp4" autoplay loop playsinline muted></video>
-			<div class="viewport-header">
-
-				<div class="homepage-intro-text">
-					<div class="jumbo text-light-1"> Hassle-Free Pet Insurance</div>
-					<h3 class="text-light-1"> Oh! You'r new. Can we sniff your butt?</h3>
-				</div>
-
-					<?php include 'main-nav.php'; ?>
-
+			<div class="home-header">
+				<div class="home-header-inner">
+					<div class="homepage-intro-text">
+						<div class="jumbo text-light-1"> Hassle-Free Pet Insurance</div>
+						<h3 class="text-light-1"> Oh! You'r new. Can we sniff your butt?</h3>
+					</div>
+						<?php include 'main-nav.php'; ?>
+					</div>
 			</div>
 
 
@@ -54,10 +54,6 @@
 	<div class="homepage-content">
 	<?php }; //end if?>
 
-	<?php
-		if (!$isHomePage){
-			include 'main-nav.php';
-		};
-	?>
+	<?php include 'main-nav.php'; ?>
 
 	<div class="site-content">

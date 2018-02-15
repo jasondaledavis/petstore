@@ -1,9 +1,66 @@
 <?php include 'header.php' ?>
 
+<!-- Hero Component right image only -->
+<div class="flex-container fullbleed bg-light-1 pos-rel">
+  <div class="fullbleed-bg-right darken-overlay" style="background-image: url(temp-images/Hero-Image-Pet-Insurance.jpg);"></div>
+
+  <div class="page-width">
+    <div class="flex-row">
+      <div class="flex-col-sm-6">
+
+        <h2 class="bold">Pet Insurance</h2>
+        <p>Many pet health insurance plans look similar from a far, but PetFirst breaks down the nuances so you can see which pet insurance provider can give you and your dog or cat the best medical coverage.Many pet health insurance plans look similar from a far, but PetFirst breaks down the nuances so you can see which pet insurance provider can give you and your dog or cat the best medical coverage. Many pet health insurance plans look similar from a far, but PetFirst breaks down the nuances so you can see which pet insurance provider can give you and your dog or cat the best medical coverage.</p>
+        <a class="btn-lg btn-primary" href="#" title="Large Primary Button">Get a Free Quote</a>
+        <a class="btn-lg btn-primary" href="#" title="Large Primary Button">Optional CTA 2</a>
+
+      </div>
+    </div>
+  </div><!-- /.container -->
+</div>
+
+<br><br>
+
 
 <!-- Hero Component right image two cta -->
-<div class="bg-light-1">
-  <div class="flex-container nopad fullbleed-left">
+<div class="flex-container fullbleed bg-light-1 pos-rel">
+  <div class="fullbleed-bg-right darken-overlay" style="background-image: url(temp-images/Hero-Image-Pet-Insurance.jpg);"></div>
+
+  <div class="page-width">
+    <div class="flex-row">
+      <div class="flex-col-sm-6">
+
+        <h2 class="bold">Pet Insurance</h2>
+        <p>Many pet health insurance plans look similar from a far, but PetFirst breaks down the nuances so you can see which pet insurance provider can give you and your dog or cat the best medical coverage.Many pet health insurance plans look similar from a far, but PetFirst breaks down the nuances so you can see which pet insurance provider can give you and your dog or cat the best medical coverage. Many pet health insurance plans look similar from a far, but PetFirst breaks down the nuances so you can see which pet insurance provider can give you and your dog or cat the best medical coverage.</p>
+        <a class="btn-lg btn-primary" href="#" title="Large Primary Button">Get a Free Quote</a>
+        <a class="btn-lg btn-primary" href="#" title="Large Primary Button">Optional CTA 2</a>
+
+      </div>
+      <div class="flex-col-sm-6 fullbleed-image hero-image">
+
+        <div class="hero-cta">
+          <a href="/#">
+            <span class="med-circle-icon"><i class="fa fa-dog-face"></i></span>
+            <h4 class="bold"> Dog Insurance <i class="fa fa-arrow-right"></i></h4>
+          </a>
+        </div>
+
+        <div class="hero-cta">
+          <a href="/#">
+            <span class="med-circle-icon"><i class="fa fa-cat-face"></i></span>
+            <h4 class="bold"> Cat Insurance <i class="fa fa-arrow-right"></i></h4>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div><!-- /.container -->
+</div>
+
+<br><br>
+
+<!-- Hero Component right video -->
+<div class="flex-container fullbleed bg-light-1">
+  <div class="page-width">
     <div class="flex-row">
       <div class="flex-col-sm-6">
 
@@ -12,16 +69,55 @@
         <a class="btn-lg btn-primary" href="#" title="Large Primary Button">Get a Free Quote</a>
 
       </div>
-      <div class="flex-col-sm-6 nopad hero-image" style="background-image: url(temp-images/Hero-Image-Pet-Insurance.jpg);">
+      <div class="flex-col-sm-6 fullbleed-image hero-video nopad" style="background-image: url(temp-images/Hero-Image-Pet-Insurance.jpg);">
 
-        <div class="circle-cta">
-          <span class="med-circle-icon"><i class="fa fa-dog-face"></i></span>
-          <h4 class="bold"> Dog Insurance <i class="fa fa-arrow-right"></i></h4>
-        </div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/5rZldwRhiJ4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-        <div class="circle-cta">
-          <span class="med-circle-icon"><i class="fa fa-cat-face"></i></span>
-          <h4 class="bold"> Cat Insurance <i class="fa fa-arrow-right"></i></h4>
+      </div>
+    </div>
+  </div><!-- /.container -->
+</div>
+
+<br><br>
+
+<div class="flex-container fullbleed bg-light-1 pos-rel">
+  <div class="fullbleed-bg-right darken-overlay" style="background-image: url(temp-images/Hero-Image-Pet-Insurance.jpg);"></div>
+  <div class="page-width">
+    <div class="flex-row">
+      <div class="flex-col-sm-6">
+
+        <h2 class="bold">Pet Insurance</h2>
+        <p>Many pet health insurance plans look similar from a far, but PetFirst breaks down the nuances so you can see which pet insurance provider can give you and your dog or cat the best medical coverage.Many pet health insurance plans look similar from a far, but PetFirst breaks down the nuances so you can see which pet insurance provider can give you and your dog or cat the best medical coverage. Many pet health insurance plans look similar from a far, but PetFirst breaks down the nuances so you can see which pet insurance provider can give you and your dog or cat the best medical coverage.</p>
+        <a class="btn-lg btn-primary" href="#" title="Large Primary Button">Get a Free Quote</a>
+        <a class="btn-lg btn-primary" href="#" title="Large Primary Button">Optional CTA 2</a>
+
+      </div>
+      <div class="flex-col-sm-6 fullbleed-image hero-image">
+
+        <div class="hero-get-a-quote">
+          <h2>Find a Plan That Fits</h2>
+
+          <label>
+            What's your pets's name?
+          </label>
+          <input type="text" placeholder="We bet it's cute!" class="inline-right"><input type="button" class="btn-half-left btn-primary fancy" value="Get My Free Quote">
+
+          <!-- Start Google Widget -->
+          <div id="wpac-google-review"></div>
+          <script type="text/javascript">
+          wpac_init = window.wpac_init || [];
+          wpac_init.push({widget: 'GoogleReview', id: 7085, place_id: 'ChIJT8fN6lhyaYgRz1BEFzMYj64', view_mode: 'badge_inner'});
+          (function() {
+              if ('WIDGETPACK_LOADED' in window) return;
+              WIDGETPACK_LOADED = true;
+              var mc = document.createElement('script');
+              mc.type = 'text/javascript';
+              mc.async = true;
+              mc.src = 'https://embed.widgetpack.com/widget.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+          })();
+          </script>
+          <!-- End Google Widget -->
         </div>
 
       </div>
@@ -30,7 +126,7 @@
 </div>
 
 
-
+<br><br>
 
 
 
