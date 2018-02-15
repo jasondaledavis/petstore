@@ -13,65 +13,68 @@
 
 get_header(); ?>
 
-<div class="bg-white">
-<div class="flex-container nopad fullbleed-left">
-<div class="flex-row">
-<div class="flex-col-sm-6">
+  <div class="bg-white">
+    <div class="flex-container nopad fullbleed-left">
+      <div class="flex-row">
+        <div class="flex-col-sm-6">
 
-<?php
-if ( function_exists('yoast_breadcrumb') && !is_front_page() ) {
-yoast_breadcrumb('
-<ul id="breadcrumb">','</ul>
-');
-}
-?>
-<!-- this is the WordPress default page title  -->
-<h1 class="page-title"><span class="entry-title"><?php the_title(); ?></span></h1>
+          <?php
+            if ( function_exists('yoast_breadcrumb') && !is_front_page() ) {
+            yoast_breadcrumb('
+            <ul id="breadcrumb">','</ul>
+            ');
+            }
+          ?>
+        <!-- this is the WordPress default page title  -->
+        <h2 class="bold"><?php the_title(); ?></h2>
 
-<?php
-// Start the loop.
-while ( have_posts() ) : the_post();
+        <?php
+        // Start the loop.
+        while ( have_posts() ) : the_post();
 
-// Include the page content template.
-get_template_part( 'template-parts/content', 'page' );
+        // Include the page content template.
+        get_template_part( 'template-parts/content', 'page' );
 
-// End of the loop.
-endwhile;
-?>
+        // End of the loop.
+        endwhile;
+        ?>
 
-<!-- this is the CTA that appears below the content area -->
-<?php if ( get_post_meta( $post->ID, 'global_page_cta', true ) ) {
+        <!-- this is the CTA that appears below the content area -->
 
-echo '<a class="btn-lg btn-primary" href="<?php the_permalink(); ?>" title="Large Primary Button">';
+          <?php 
 
-echo get_post_meta( $post->ID, 'global_page_cta', true );
+          $link = get_field('cta_button');
 
-'</a>';
+          if( $link ): ?>
+            
+            <a class="btn-lg btn-primary" title="Large Primary Button" href="<?php echo $link['url']; ?>">Get A Quote</a>
 
-} ?> 
+          <?php endif; ?>
 
-</div><!-- end .flex-col-sm-6 -->
+        </div><!-- end .flex-col-sm-6 -->
 
-<?php get_template_part( 'template-parts/heroes' ); ?>
-<?php
+        <?php get_template_part( 'template-parts/heroes' ); ?>
 
-if ( has_post_thumbnail() ) {
+        <?php
 
-// leave this and for just an image use post thumbnail function or default to an image with the else statement
-the_post_thumbnail( 'header-image', array( 'alt' => the_title_attribute( 'echo=0' ), 'class' => "custom-header-image" ) ); 
+        //if ( has_post_thumbnail() ) {
 
-} else {  
-    $image = get_template_directory_uri() .'/assets/img/Hero-Image-Pet-Insurance.jpg'; 
-    echo '<div class="flex-col-sm-6 fullbleed-image hero-image" style="background:url('.$image.');background-size: cover;" /></div>';
-} ?>
+        // leave this and for just an image use post thumbnail function or default to an image with the else statement
+        // the_post_thumbnail( 'header-image', array( 'alt' => the_title_attribute( 'echo=0' ), 'class' => "flex-col-sm-6 fullbleed-image hero-image" ) ); 
 
-</div><!-- end .flex-col-sm-6 -->
+        // } else {  
+        //     $image = get_template_directory_uri() .'/assets/img/Hero-Image-Pet-Insurance.jpg'; 
+        //     echo '<div class="flex-col-sm-6 fullbleed-image hero-image" style="background:url('.$image.');background-size: cover;" /></div>';
+        // } 
+        ?>
 
-</div><!-- /.flex-row -->
-</div><!-- /.white-box -->
-</div><!-- /.container -->
+        <!-- </div> --><!-- end .flex-col-sm-6 -->
 
-<?php get_template_part( 'template-parts/howitworks' ); ?>
+      </div><!-- /.flex-row -->
+    </div><!-- /.white-box -->
+  </div><!-- /.container -->
+
+  <?php get_template_part( 'template-parts/howitworks' ); ?>
 
   <!-- Claim Tale (Individual) Component -->
   <div class="flex-container claim-tale nopad fullbleed" style="background: url('<?php echo get_template_directory_uri();?>/assets/img/Full-Width-Banner-Claim-Tale-MacDuff.jpg'); background-position: center;
@@ -80,11 +83,37 @@ the_post_thumbnail( 'header-image', array( 'alt' => the_title_attribute( 'echo=0
     <div class="flex-row page-width">
 
       <div class="flex-col-sm-8">
-        <h2 class="bold text-light-1">MacDuff's close call with a car</h2>
-        <p class="text-light-1">When MacDuff the Airedale Terrier was hit by a car, bone fractures and lung damage required x-rays, surgery and a 10-day stay at the veterinary emergency hospital. </p>
-        <a class="cta" href="#" title="More Claim Tales">
-          <span class="text-light-1">More Claim Tales <i class="fa fa-arrow-right"></i></span>
-        </a>
+          
+          <?php if ( get_post_meta( $post->ID, 'header', true ) ) { 
+
+            echo '<h2 class="bold text-light-1">'.get_post_meta( $post->ID, 'header', true ).'</h2>';
+
+          } else {
+
+            echo '<h2 class="bold text-light-1">Take your pet to the vet</h2>';
+
+          } ?>
+
+          <?php if ( get_post_meta( $post->ID, 'step_body_copy', true ) ) {
+
+            echo '<p>'.get_post_meta( $post->ID, 'step_body_copy', true ).'</p>';
+
+          } else {
+
+            echo '<p class="text-light-1">When MacDuff the Airedale Terrier was hit by a car, bone fractures and lung damage required x-rays, surgery and a 10-day stay at the veterinary emergency hospital. </p>';
+
+          } ?>
+
+          <?php
+
+          $link = get_field('global_page_cta');
+
+          if( $link ): ?>
+            
+            <a class="cta" title="Large Primary Button" href="<?php echo $link['url']; ?>"><span class="text-light-1">More Claim Tales <i class="fa fa-arrow-right"></i></span></a>
+
+          <?php endif; ?>
+
       </div>
 
       <div class="flex-col-sm-4">
@@ -110,72 +139,109 @@ the_post_thumbnail( 'header-image', array( 'alt' => the_title_attribute( 'echo=0
 <!-- Plan Location Selector Component-->
 <div class="flex-container pad">
 
-<div class="flex-row">
-  <div class="flex-col-sm-7">
-    <h2 class="bold">Pet Insurance Plan Options in </h2>
-  </div>
-  <div class="flex-col-sm-5">
-    <select class="">
-    <option value="AL">Alabama</option>
-    <option value="AK">Alaska</option>
-    <option value="AZ">Arizona</option>
-    <option value="AR">Arkansas</option>
-    <option value="CA">California</option>
-    <option value="CO">Colorado</option>
-    <option value="CT">Connecticut</option>
-    <option value="DE">Delaware</option>
-    <option value="DC">District Of Columbia</option>
-    <option value="FL">Florida</option>
-    <option value="GA">Georgia</option>
-    <option value="HI">Hawaii</option>
-    <option value="ID">Idaho</option>
-    <option value="IL">Illinois</option>
-    <option value="IN">Indiana</option>
-    <option value="IA">Iowa</option>
-    <option value="KS">Kansas</option>
-    <option value="KY">Kentucky</option>
-    <option value="LA">Louisiana</option>
-    <option value="ME">Maine</option>
-    <option value="MD">Maryland</option>
-    <option value="MA">Massachusetts</option>
-    <option value="MI">Michigan</option>
-    <option value="MN">Minnesota</option>
-    <option value="MS">Mississippi</option>
-    <option value="MO">Missouri</option>
-    <option value="MT">Montana</option>
-    <option value="NE">Nebraska</option>
-    <option value="NV">Nevada</option>
-    <option value="NH">New Hampshire</option>
-    <option value="NJ">New Jersey</option>
-    <option value="NM">New Mexico</option>
-    <option value="NY">New York</option>
-    <option value="NC">North Carolina</option>
-    <option value="ND">North Dakota</option>
-    <option value="OH">Ohio</option>
-    <option value="OK">Oklahoma</option>
-    <option value="OR">Oregon</option>
-    <option value="PA">Pennsylvania</option>
-    <option value="RI">Rhode Island</option>
-    <option value="SC">South Carolina</option>
-    <option value="SD">South Dakota</option>
-    <option value="TN">Tennessee</option>
-    <option value="TX">Texas</option>
-    <option value="UT">Utah</option>
-    <option value="VT">Vermont</option>
-    <option value="VA">Virginia</option>
-    <option value="WA">Washington</option>
-    <option value="WV">West Virginia</option>
-    <option value="WI">Wisconsin</option>
-    <option value="WY">Wyoming</option>
-    </select>
+  <div class="flex-row">
+    <div class="flex-col-sm-7">
 
-    <a class="btn-lg btn-secondary" href="#" title="Large Secondary Button">Use my Location</a>
-    <a href="#" class="" title=""><i class="fa fa-question-circle text-dark"></i></a>
-  </div>
-</div>
+      <?php if ( get_post_meta( $post->ID, 'header', true ) ) { 
 
-  <p>The PetFirst Pet Insurance plan offers robust annual benefit amount options, chronic care coverage and no lifetime or per-incident limits for pets of all ages. You can customize your deductible and reimbursement rates so that they work best for your pet's needs and your medical care budget, and you can upgrade or downgrade your coverage at any time. </p>
-</div>
+        echo '<h2 class="bold">'.get_post_meta( $post->ID, 'header', true ).'</h2>';
+
+      } else {
+
+        echo '<h2 class="bold">Pet Insurance Plan Options in </h2>';
+
+      } ?>
+
+    </div><!-- end .flex-col-sm-7 -->
+    <div class="flex-col-sm-5">
+      <select class="">
+      <option value="AL">Alabama</option>
+      <option value="AK">Alaska</option>
+      <option value="AZ">Arizona</option>
+      <option value="AR">Arkansas</option>
+      <option value="CA">California</option>
+      <option value="CO">Colorado</option>
+      <option value="CT">Connecticut</option>
+      <option value="DE">Delaware</option>
+      <option value="DC">District Of Columbia</option>
+      <option value="FL">Florida</option>
+      <option value="GA">Georgia</option>
+      <option value="HI">Hawaii</option>
+      <option value="ID">Idaho</option>
+      <option value="IL">Illinois</option>
+      <option value="IN">Indiana</option>
+      <option value="IA">Iowa</option>
+      <option value="KS">Kansas</option>
+      <option value="KY">Kentucky</option>
+      <option value="LA">Louisiana</option>
+      <option value="ME">Maine</option>
+      <option value="MD">Maryland</option>
+      <option value="MA">Massachusetts</option>
+      <option value="MI">Michigan</option>
+      <option value="MN">Minnesota</option>
+      <option value="MS">Mississippi</option>
+      <option value="MO">Missouri</option>
+      <option value="MT">Montana</option>
+      <option value="NE">Nebraska</option>
+      <option value="NV">Nevada</option>
+      <option value="NH">New Hampshire</option>
+      <option value="NJ">New Jersey</option>
+      <option value="NM">New Mexico</option>
+      <option value="NY">New York</option>
+      <option value="NC">North Carolina</option>
+      <option value="ND">North Dakota</option>
+      <option value="OH">Ohio</option>
+      <option value="OK">Oklahoma</option>
+      <option value="OR">Oregon</option>
+      <option value="PA">Pennsylvania</option>
+      <option value="RI">Rhode Island</option>
+      <option value="SC">South Carolina</option>
+      <option value="SD">South Dakota</option>
+      <option value="TN">Tennessee</option>
+      <option value="TX">Texas</option>
+      <option value="UT">Utah</option>
+      <option value="VT">Vermont</option>
+      <option value="VA">Virginia</option>
+      <option value="WA">Washington</option>
+      <option value="WV">West Virginia</option>
+      <option value="WI">Wisconsin</option>
+      <option value="WY">Wyoming</option>
+      </select>
+
+      <?php
+
+      $link = get_field('global_page_cta');
+
+      if( $link ): ?>
+        
+        <a class="btn-lg btn-secondary" title="Large Primary Button" href="<?php echo $link['url']; ?>">Use my Location</a>
+
+      <?php endif; ?>
+
+      <?php
+
+      $link = get_field('global_page_cta');
+
+      if( $link ): ?>
+        
+        <a class="btn-lg btn-secondary" title="Large Primary Button" href="<?php echo $link['url']; ?>"><i class="fa fa-question-circle text-dark"></i></a>
+
+      <?php endif; ?>
+
+    </div><!-- end .flex-col-sm-5 -->
+  </div><!-- end .flex-row -->
+
+  <?php if ( get_post_meta( $post->ID, 'step_body_copy', true ) ) {
+
+    echo '<p>'.get_post_meta( $post->ID, 'step_body_copy', true ).'</p>';
+
+  } else {
+
+    echo '<p>The PetFirst Pet Insurance plan offers robust annual benefit amount options, chronic care coverage and no lifetime or per-incident limits for pets of all ages. You can customize your deductible and reimbursement rates so that they work best for your pet\'s needs and your medical care budget, and you can upgrade or downgrade your coverage at any time. </p>';
+  
+  } ?>
+
+</div><!-- end .flex-container pad -->
 <!-- /Plan Location Selector Component-->
 
 <!-- Plans Component -->
@@ -198,6 +264,7 @@ the_post_thumbnail( 'header-image', array( 'alt' => the_title_attribute( 'echo=0
         <div>$50-$500</div>
         <p>Starting at <span class="exagerated">$32/mo</span></p>
         <a class="btn-lg btn-primary btn-wide" href="#" title="Start Quote">Start Quote</a>
+        
       </div>
       <!-- /Plan -->
     </div>
@@ -222,6 +289,7 @@ the_post_thumbnail( 'header-image', array( 'alt' => the_title_attribute( 'echo=0
         <div>$50-$500</div>
         <p>Starting at <span class="exagerated">$32/mo</span></p>
         <a class="btn-lg btn-primary btn-wide" href="#" title="Start Quote">Start Quote</a>
+
       </div>
       <!-- /Plan -->
     </div>
@@ -242,6 +310,7 @@ the_post_thumbnail( 'header-image', array( 'alt' => the_title_attribute( 'echo=0
         <div>$50-$500</div>
         <p>Starting at <span class="exagerated">$32/mo</span></p>
         <a class="btn-lg btn-primary btn-wide" href="#" title="Start Quote">Start Quote</a>
+
       </div>
       <!-- /Plan -->
     </div>
@@ -366,10 +435,18 @@ the_post_thumbnail( 'header-image', array( 'alt' => the_title_attribute( 'echo=0
       <a href="#" title="">Read More  <i class="fa fa-arrow-right"></i></a>
     </div>
   </div>
-  <a class="btn-lg btn-primary" href="#" title="Large Primary Button">Ask us a Question</a>
+
+  <?php
+
+  $link = get_field('global_page_cta');
+
+  if( $link ): ?>
+    
+    <a class="btn-lg btn-primary" title="Large Primary Button" href="<?php echo $link['url']; ?>">Get A Quote</a>
+
+  <?php endif; ?>
+
 </div>
 <!-- /About Pet Insurance Component -->
-
-
 
 <?php get_footer(); ?>

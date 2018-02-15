@@ -12,9 +12,25 @@
 <div class="flex-container fullbleed bg-light-1">
   <div class="center page-width">
 
-    <h5 class="text-primary"><?php get_post_meta( $post->ID, 'pre-header', true ); ?></h5>
-   
-    <h2 class="bold"><?php get_post_meta( $post->ID, 'header', true ); ?></h2>
+    <?php if ( get_post_meta( $post->ID, 'pre-header', true ) ) { 
+
+            echo '<h5 class="text-primary">'.get_post_meta( $post->ID, 'pre-header', true ).'</h5>';
+
+          } else {
+
+            echo '<h5 class="text-primary">Pet insurance is different than people insurance</h5>';
+
+          } ?>
+
+    <?php if ( get_post_meta( $post->ID, 'header', true ) ) { 
+
+            echo '<h2 class="bold">'.get_post_meta( $post->ID, 'header', true ).'</h2>';
+
+          } else {
+
+            echo '<h2 class="bold">How it works</h2>';
+
+          } ?>
     
     <div class="flex-row circle-icons">
 
@@ -33,12 +49,10 @@
           }?>
 
         </div>
-        
-        <h4 class="bold">
 
           <?php if ( get_post_meta( $post->ID, 'step_header', true ) ) { 
 
-            echo get_post_meta( $post->ID, 'step_header', true );
+            echo '<h4 class="bold">'.get_post_meta( $post->ID, 'step_header', true ).'</h4>';
 
           } else {
 
@@ -46,21 +60,15 @@
 
           } ?>
 
-        </h4>
-       
-        <p>
-
           <?php if ( get_post_meta( $post->ID, 'step_body_copy', true ) ) {
 
-            echo get_post_meta( $post->ID, 'step_body_copy', true );
+            echo '<p>'.get_post_meta( $post->ID, 'step_body_copy', true ).'</p>';
 
           } else {
 
             echo '<p>Visit any licensed vet, emergency clinic or specialist in the US. There is no network of providers to worry about.</p>';
           
           } ?>
-
-        </p>
 
       </div>
 
@@ -78,12 +86,10 @@
           }?>
     
         </div>
-        
-          <h4 class="bold">
 
           <?php if ( get_post_meta( $post->ID, 'step_header', true ) ) { 
 
-            echo get_post_meta( $post->ID, 'step_header', true );
+            echo '<h4 class="bold">'.get_post_meta( $post->ID, 'step_header', true ).'</h4>';
 
           } else {
 
@@ -91,21 +97,15 @@
 
           } ?>
 
-        </h4>
-       
-        <p>
-
           <?php if ( get_post_meta( $post->ID, 'step_body_copy', true ) ) {
 
-            echo get_post_meta( $post->ID, 'step_body_copy', true );
+            echo '<p>'.get_post_meta( $post->ID, 'step_body_copy', true ).'</p>';
 
           } else {
 
             echo '<p>Pay your bill at the vet, and send us your claim along with vet records from the visit and an invoice.</p>';
           
           } ?>
-
-        </p>
 
       </div>
 
@@ -124,25 +124,19 @@
 
         </div>
         
-          <h4 class="bold">
-
           <?php if ( get_post_meta( $post->ID, 'step_header', true ) ) { 
 
-            echo get_post_meta( $post->ID, 'step_header', true );
+            echo '<h4 class="bold">'.get_post_meta( $post->ID, 'step_header', true ).'</h4>';
 
           } else {
 
-            echo '<h4 class="bold">Get money back quickly</h4>';
+            echo '<h4 class="bold">Send us your claim</h4>';
 
           } ?>
 
-        </h4>
-       
-        <p>
-
           <?php if ( get_post_meta( $post->ID, 'step_body_copy', true ) ) {
 
-            echo get_post_meta( $post->ID, 'step_body_copy', true );
+            echo '<p>'.get_post_meta( $post->ID, 'step_body_copy', true ).'</p>';
 
           } else {
 
@@ -150,19 +144,17 @@
           
           } ?>
 
-        </p>
-
         </div>
 
-        <?php if ( get_post_meta( $post->ID, 'cta_button', true ) ) {
+          <?php 
 
-        echo '<a href="#" style="margin:40px auto;" class="btn-lg btn-primary" href="#" title="Large Primary Button">';
+          $link = get_field('cta_button');
 
-        echo get_post_meta( $post->ID, 'cta_button', true );
+          if( $link ): ?>
+            
+            <a class="btn-lg btn-primary" title="Large Primary Button" href="<?php echo $link['url']; ?>">Get A Quote</a>
 
-       '</a>';
-
-        } ?>
+          <?php endif; ?>
 
       </div><!-- /.flex-row -->
     </div>
